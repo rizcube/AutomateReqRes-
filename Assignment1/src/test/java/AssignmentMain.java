@@ -1,6 +1,9 @@
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matchers.*;
+import io.restassured.path.json.JsonPath;
 
 public class AssignmentMain {
 	
@@ -84,7 +87,20 @@ public class AssignmentMain {
 		System.out.println("Invalid Resource getCall 6");
 		System.out.println(invalidResource);
 		
+		// Create user Post Request 1
 		
+		String createUser = given().queryParam("Content-Type", "application/json")
+		.body("{\n" + 
+				"    \"name\": \"Rizwan\",\n" + 
+				"    \"job\": \"Tester\"\n" + 
+				"}").
+		when().log().all().post("/api/users")
+		.then().log().all().assertThat().statusCode(201)
+		.header("server", "cloudflare").extract().response().asString();
+	
+		System.out.println(createUser);
+		JsonPath js = new JsonPath(createUser);
+		System.out.println(js.getInt("id"));
 		
 	}
 
