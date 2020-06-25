@@ -100,8 +100,38 @@ public class AutomateReqResTest {
 	
 		System.out.println(createUser);
 		JsonPath js = new JsonPath(createUser);
+		System.out.println(js);
+		System.out.println("Here is Id >");
 		System.out.println(js.getInt("id"));
 		
+		
+		
+		// Update user details Update/put request 1
+		
+		String updateUser = given().queryParam("Content-Type", "application/json; charset=utf-8")
+		.body("{\n" + 
+				"    \"name\": \"RizAli\",\n" + 
+				"    \"job\": \"zion resident\"\n" + 
+				"}")
+		.when().put("https://reqres.in/api/users/2")
+		.then().assertThat().statusCode(200).header("Server", "cloudflare")
+		.extract().response().asString();
+		
+		System.out.println("Updated user putCall 1");
+		System.out.println(updateUser);
+	
+		JsonPath uu = new JsonPath(updateUser);
+		
+		System.out.println("This user was updated at >");
+		System.out.println(uu.getString("updatedAt"));
 	}
 
 }
+
+
+
+
+
+
+
+
