@@ -5,7 +5,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import io.restassured.path.json.JsonPath;
 
-public class AssignmentMain {
+public class AutomateReqResTest {
 	
 	static String baseURI;
 	public static void main(String args[]) {
