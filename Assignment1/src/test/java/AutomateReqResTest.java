@@ -20,6 +20,7 @@ public class AutomateReqResTest {
 		.extract().response().asString();
 		
 		System.out.println("List users getCall 1");
+		
 		System.out.println(list_users);
 		
 		// get single user getCall 2
@@ -87,15 +88,15 @@ public class AutomateReqResTest {
 		System.out.println("Invalid Resource getCall 6");
 		System.out.println(invalidResource);
 		
-		// Create user Post Request 1
+		// Create user request number 7 (post request)
 		
 		String createUser = given().queryParam("Content-Type", "application/json")
 		.body("{\n" + 
 				"    \"name\": \"Rizwan\",\n" + 
 				"    \"job\": \"Tester\"\n" + 
 				"}").
-		when().log().all().post("/api/users")
-		.then().log().all().assertThat().statusCode(201)
+		when().post("/api/users")
+		.then().assertThat().statusCode(201)
 		.header("server", "cloudflare").extract().response().asString();
 	
 		System.out.println(createUser);
@@ -106,14 +107,15 @@ public class AutomateReqResTest {
 		
 		
 		
-		// Update user details Update/put request 1
+		// Update user details Update/Request number 8 (put request)
+		System.out.println("88888888888888888888888888888888888888888");
 		
 		String updateUser = given().queryParam("Content-Type", "application/json; charset=utf-8")
 		.body("{\n" + 
 				"    \"name\": \"RizAli\",\n" + 
 				"    \"job\": \"zion resident\"\n" + 
 				"}")
-		.when().put("https://reqres.in/api/users/2")
+		.when().put("/api/users/2")
 		.then().assertThat().statusCode(200).header("Server", "cloudflare")
 		.extract().response().asString();
 		
@@ -122,12 +124,81 @@ public class AutomateReqResTest {
 	
 		JsonPath uu = new JsonPath(updateUser);
 		
-		System.out.println("This user was updated at >");
+		
+		System.out.println("Request 8(update request) > This user was updated at >");
 		System.out.println(uu.getString("updatedAt"));
+		
+		
+	
+	// Patch update Making partial changes to an existing resource / Request 9 (update request)
+		System.out.println("9999999999999999999999999999999999999999999999");
+	String patchUser = given().queryParam("Content-Type", "application/json; charset=utf-8")
+			.body("{\n" + 
+					"    \"name\": \"Rizwan Ali Khowaja\",\n" + 
+					"    \"job\": \"zion nion\"\n" + 
+					"}")
+			.when().put("/api/users/2")
+			.then().assertThat().statusCode(200).header("Server", "cloudflare")
+			.extract().response().asString();
+	
+			
+			System.out.println("Partial changes to the existing user - Request 9 (update request)");
+			System.out.println(patchUser);
+		
+			JsonPath pu = new JsonPath(updateUser);
+			
+			System.out.println("This partial information was updated at >");
+			System.out.println(pu.getString("updatedAt"));
+			
+	
+	
+	// Delete user request number 10 
+	System.out.println("1000000000000000000000000000000000000000000");
+	String deleteUser = given()
+	.when().delete("/api/users/2")
+	.then().assertThat().statusCode(204).header("Server", "cloudflare")
+	.extract().response().asString();
+	
+	System.out.println("User has been deleted,  Request number 8");
+	System.out.println(deleteUser.isBlank());
+	
+	
+	// Post request Register user - successful - Request 11
+	
+	String registerSuccess = given().header("Content-Type", "application/json")
+	.body("{\n" + 
+			"    \"email\": \"eve.holt@reqres.in\",\n" + 
+			"    \"password\": \"pistol\"\n" + 
+			"}")
+	.when().post("/api/register")
+	.then().assertThat().statusCode(200).header("Server","cloudflare")
+	.extract().response().asString();
+	
+	System.out.println(registerSuccess);
+	
+	
+	
+	// Post request Register user - unsuccessful - Request 11
+	
+	System.out.println("11-11-11-11-11-11-11-11-11-11");
+	
+	
+	
+	String registerUnsuccessful = given().log().all().header("Content-Type","application/json")
+	.body("{\n" + 
+			"    \"email\": \"sydney@fife\"\n" + 
+			"}")
+	.when().post("/api/register")
+	.then().log().all().assertThat().statusCode(400).header("server","cloudflare")
+	.header("Content-Type", "application/json; charset=utf-8")
+	.extract().response().asString();
+	
+	System.out.println(registerUnsuccessful);
+	
 	}
-
+	
+	
 }
-
 
 
 
