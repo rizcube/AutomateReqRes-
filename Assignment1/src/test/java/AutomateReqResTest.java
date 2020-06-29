@@ -3,6 +3,9 @@ import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
+
+import files.ReUsableMethods;
+import files.ReUseableMethods;
 import io.restassured.path.json.JsonPath;
 
 public class AutomateReqResTest {
@@ -106,7 +109,8 @@ public class AutomateReqResTest {
 		.header("server", "cloudflare").extract().response().asString();
 	
 		System.out.println(createUser);
-		JsonPath js = new JsonPath(createUser);
+		JsonPath js = ReUseableMethods.rawToJson(createUser);
+		
 		System.out.println(js);
 		System.out.println("Here is Id >");
 		System.out.println(js.getInt("id"));
