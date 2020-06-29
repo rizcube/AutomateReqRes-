@@ -22,7 +22,7 @@ public class AutomateReqResTest {
 		System.out.println("111111111111111111111111111111111");
 		// get users request getCall 1
 
-		baseURI = RestAssured.baseURI = "https://reqres.in/";
+		RestAssured.baseURI = "https://reqres.in/";
 		
 		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
 		.when()
@@ -35,23 +35,37 @@ public class AutomateReqResTest {
 		int per_page = lu.getPer_page();
 		int total = lu.getTotal();
 		int total_pages = lu.getTotal_pages();
+		
+		// query: find a user whose first_name is equal to Byron
 	    
 		List<files.Data> data = lu.getData();
-	    String email = data.get(1).getAvatar();
+		System.out.println("class object");
+		String email = data.get(3).getFirst_name();
+	    System.out.println(data.size());
+	    
+	    for (int i=0; i<data.size(); i++)
+	    {
+	    	System.out.println(data.get(i).getFirst_name());
+	    }
+		
+	    
+		
+		
+		List<files.Data> data1 = lu.getData();
+	    System.out.println(data1);
+	    
 	    
 	    System.out.println(email);
-	    
-	    
 		Ad ad = lu.getAd();
 		System.out.println(ad.getCompany());
 		System.out.println(ad.getUrl());
 		System.out.println(ad.getText());
-
-		
 		System.out.println(per_page);
 		
 	
+	
 		
+	
 		
 		/*
 		
