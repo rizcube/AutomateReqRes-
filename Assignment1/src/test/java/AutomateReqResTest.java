@@ -10,6 +10,7 @@ public class AutomateReqResTest {
 	static String baseURI;
 	public static void main(String args[]) {
 		
+		System.out.println("111111111111111111111111111111111");
 		// get users request getCall 1
 
 		baseURI = RestAssured.baseURI = "https://reqres.in/";
@@ -27,7 +28,7 @@ public class AutomateReqResTest {
 		int id;
 		id = 2;
 		
-		
+		System.out.println("222222222222222222222222222222222222");
 		String singleUser = given().queryParam("id", id)
 		.when()
 		.get("/api/users?page=2")
@@ -38,7 +39,10 @@ public class AutomateReqResTest {
 		System.out.println(singleUser);
 		
 		
+		System.out.println("333333333333333333333333333333333333333333");
+		
 		// single user not found getCall 3
+		
 		int invalidId;
 		invalidId= 23;
 		String singleUserNotFound = given().queryParam("id", invalidId)
@@ -50,8 +54,8 @@ public class AutomateReqResTest {
 		System.out.println("User not found getCall 3");
 		System.out.println(singleUserNotFound);
 		
-		// List Resource getCall 3
-		
+		// List Resource getCall 4
+		System.out.println("4444444444444444444444444444444444444");
 		String listResource = given()
 		.when()
 		.get("/api/unknown")
@@ -61,7 +65,7 @@ public class AutomateReqResTest {
 		System.out.println("List Resource getCall 4");
 		System.out.println(listResource);
 		
-		
+		System.out.println("5555555555555555555555555555555555");
 		// List single Resource not found getCall 5
 		
 		int resourceId = 2;
@@ -76,7 +80,7 @@ public class AutomateReqResTest {
 		
 		
 		// Get request invalid Resource getCall 6
-		
+		System.out.println("666666666666666666666666666666666");
 		
 		int invalidResourceId = 23;
 		String invalidResource = given().queryParam("id", invalidResourceId)
@@ -89,6 +93,8 @@ public class AutomateReqResTest {
 		System.out.println(invalidResource);
 		
 		// Create user request number 7 (post request)
+		System.out.println("777777777777777777777777777777777777777");
+		
 		
 		String createUser = given().queryParam("Content-Type", "application/json")
 		.body("{\n" + 
@@ -164,6 +170,7 @@ public class AutomateReqResTest {
 	
 	
 	// Post request Register user - successful - Request 11
+	System.out.println("11-11-11-11-11-11-11-11-11-11");
 	
 	String registerSuccess = given().header("Content-Type", "application/json")
 	.body("{\n" + 
@@ -178,9 +185,9 @@ public class AutomateReqResTest {
 	
 	
 	
-	// Post request Register user - unsuccessful - Request 11
+	// Post request Register user - unsuccessful - Request 12
 	
-	System.out.println("11-11-11-11-11-11-11-11-11-11");
+	System.out.println("12-12-12-12-12-12-12-12-12-12-12-12-12-12-12");
 	
 	
 	
@@ -195,9 +202,50 @@ public class AutomateReqResTest {
 	
 	System.out.println(registerUnsuccessful);
 	
+	
+	System.out.println("13-13-13-13-13-13-13-13-13-13-13-13-13-13-13-13");
+	
+	
+	String loginSuccessful = given().header("Content-Type","application/json")
+			.body("{\n" + 
+					"    \"email\": \"eve.holt@reqres.in\",\n" + 
+					"    \"password\": \"cityslicka\"\n" + 
+					"}")
+			.when().post("/api/login")
+			.then().assertThat().statusCode(200).header("server","cloudflare")
+			.header("Content-Type", "application/json; charset=utf-8")
+			.extract().response().asString();
+			
+			System.out.println(loginSuccessful);
+	
+			System.out.println("14-14-14-14-14-14-14-14-14-14-14-14-14-14-14");
+	
+			String loginUnsuccessful = given().header("Content-Type","application/json")
+					.body("{\n" + 
+							"    \"email\": \"peter@klaven\"\n" + 
+							"}")
+					.when().post("/api/login")
+					.then().assertThat().statusCode(400).header("server","cloudflare")
+					.header("Content-Type", "application/json; charset=utf-8")
+					.extract().response().asString();
+					
+					System.out.println(loginUnsuccessful);
+	
+	
+		System.out.println("15-15-15-15-15-15-15-15-15-15-15-15-15-15-15");
+	
+		String delayedResponse = given()
+		.when()
+		.get("/api/users?delay=3")
+		.then().assertThat().statusCode(200)
+		.extract().response().asString();
+				
+		System.out.println("This is delayed response");
+		System.out.println(delayedResponse);			
+					
+					
+					
 	}
-	
-	
 }
 
 
