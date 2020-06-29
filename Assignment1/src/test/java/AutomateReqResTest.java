@@ -1,9 +1,11 @@
 import io.restassured.RestAssured;
+import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
+import files.ListUsers;
 import files.ReUsableMethods;
 import files.ReUseableMethods;
 import io.restassured.path.json.JsonPath;
@@ -17,15 +19,20 @@ public class AutomateReqResTest {
 		// get users request getCall 1
 
 		baseURI = RestAssured.baseURI = "https://reqres.in/";
-		String list_users = given().queryParam("page", 2)
+		
+		ListUsers lu =given().queryParam("page", 2)
 		.when()
 		.get("/api/users?page=2")
 		.then().assertThat().statusCode(200)
-		.extract().response().asString();
+		.extract().response().as(ListUsers.class);
 		
 		System.out.println("List users getCall 1");
+		System.out.println(lu.getPage());
+		System.out.println(lu.getData());
+		//System.out.println(ListUsers.class);
 		
-		System.out.println(list_users);
+		
+		/*
 		
 		// get single user getCall 2
 		int id;
@@ -122,7 +129,7 @@ public class AutomateReqResTest {
 		
 		String updateUser = given().queryParam("Content-Type", "application/json; charset=utf-8")
 		.body("{\n" + 
-				"    \"name\": \"RizAli\",\n" + 
+				"    \"name\": \"morpheus\",\n" + 
 				"    \"job\": \"zion resident\"\n" + 
 				"}")
 		.when().put("/api/users/2")
@@ -194,12 +201,12 @@ public class AutomateReqResTest {
 	
 	
 	
-	String registerUnsuccessful = given().log().all().header("Content-Type","application/json")
+	String registerUnsuccessful = given().header("Content-Type","application/json")
 	.body("{\n" + 
 			"    \"email\": \"sydney@fife\"\n" + 
 			"}")
 	.when().post("/api/register")
-	.then().log().all().assertThat().statusCode(400).header("server","cloudflare")
+	.then().assertThat().statusCode(400).header("server","cloudflare")
 	.header("Content-Type", "application/json; charset=utf-8")
 	.extract().response().asString();
 	
@@ -246,7 +253,7 @@ public class AutomateReqResTest {
 		System.out.println("This is delayed response");
 		System.out.println(delayedResponse);			
 					
-					
+			*/		
 					
 	}
 }
