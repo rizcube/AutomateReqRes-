@@ -1,3 +1,4 @@
+import io.cucumber.java.it.Data;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
@@ -5,6 +6,9 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
+import java.util.List;
+
+import files.Ad;
 import files.ListUsers;
 import files.ReUsableMethods;
 import files.ReUseableMethods;
@@ -20,16 +24,33 @@ public class AutomateReqResTest {
 
 		baseURI = RestAssured.baseURI = "https://reqres.in/";
 		
-		ListUsers lu =given().queryParam("page", 2)
+		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
 		.when()
 		.get("/api/users?page=2")
 		.then().assertThat().statusCode(200)
 		.extract().response().as(ListUsers.class);
 		
 		System.out.println("List users getCall 1");
-		System.out.println(lu.getPage());
-		System.out.println(lu.getData());
-		//System.out.println(ListUsers.class);
+		int page = lu.getPage();
+		int per_page = lu.getPer_page();
+		int total = lu.getTotal();
+		int total_pages = lu.getTotal_pages();
+	    
+		List<files.Data> data = lu.getData();
+	    String email = data.get(1).getAvatar();
+	    
+	    System.out.println(email);
+	    
+	    
+		Ad ad = lu.getAd();
+		System.out.println(ad.getCompany());
+		System.out.println(ad.getUrl());
+		System.out.println(ad.getText());
+
+		
+		System.out.println(per_page);
+		
+	
 		
 		
 		/*
