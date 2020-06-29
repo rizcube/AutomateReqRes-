@@ -132,7 +132,7 @@ public class AutomateReqResTest {
 		System.out.println("Updated user putCall 1");
 		System.out.println(updateUser);
 	
-		JsonPath uu = new JsonPath(updateUser);
+		JsonPath uu = ReUseableMethods.rawToJson(updateUser);
 		
 		
 		System.out.println("Request 8(update request) > This user was updated at >");
@@ -155,8 +155,7 @@ public class AutomateReqResTest {
 			System.out.println("Partial changes to the existing user - Request 9 (update request)");
 			System.out.println(patchUser);
 		
-			JsonPath pu = new JsonPath(updateUser);
-			
+			JsonPath pu = ReUseableMethods.rawToJson(updateUser);
 			System.out.println("This partial information was updated at >");
 			System.out.println(pu.getString("updatedAt"));
 			
