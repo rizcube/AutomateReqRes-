@@ -36,19 +36,23 @@ public class AutomateReqResTest {
 		int total = lu.getTotal();
 		int total_pages = lu.getTotal_pages();
 		
-		// query: find a user whose first_name is equal to Byron
+		// query: Get user details by providing their first_name
+	    String firstName = "Tobias";
 	    
 		List<files.Data> data = lu.getData();
 		System.out.println("class object");
-		String email = data.get(3).getFirst_name();
-	    System.out.println(data.size());
 	    
 	    for (int i=0; i<data.size(); i++)
 	    {
-	    	System.out.println(data.get(i).getFirst_name());
+	    	if(data.get(i).getFirst_name().equalsIgnoreCase(firstName))
+	    	{
+	    		System.out.println("email > " + data.get(i).getEmail());
+	    		System.out.println("First Name > " + data.get(i).getFirst_name());
+	    		System.out.println("Last Name > " + data.get(i).getLast_name());
+	    		System.out.println("Avatar >  " +  data.get(i).getAvatar());
+	    	}
 	    }
 		
-	    
 		
 		
 		List<files.Data> data1 = lu.getData();
