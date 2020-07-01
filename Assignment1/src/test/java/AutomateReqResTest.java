@@ -6,9 +6,11 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import files.Ad;
+import files.UserTests;
 import files.ListUsers;
 import files.ReUsableMethods;
 import files.ReUseableMethods;
@@ -16,12 +18,20 @@ import io.restassured.path.json.JsonPath;
 
 public class AutomateReqResTest {
 	
+	
+	
+	
 	static String baseURI;
 	public static void main(String args[]) {
 		
-		System.out.println("111111111111111111111111111111111");
 		// get users request getCall 1
 
+		UserTests userTests = new UserTests();
+		userTests.testAll();
+		/*
+		
+		
+		
 		RestAssured.baseURI = "https://reqres.in/";
 		
 		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
@@ -31,17 +41,26 @@ public class AutomateReqResTest {
 		.extract().response().as(ListUsers.class);
 		
 		System.out.println("List users getCall 1");
+		System.out.println("************************************");
 		int page = lu.getPage();
 		int per_page = lu.getPer_page();
 		int total = lu.getTotal();
 		int total_pages = lu.getTotal_pages();
 		
 		// query: Get user details by providing their first_name
-	    String firstName = "Tobias";
 	    
 		List<files.Data> data = lu.getData();
-		System.out.println("class object");
-	    
+
+		 for (int i=0; i<data.size(); i++)
+		 {
+			 System.out.println("First Name > " + data.get(i).getFirst_name());
+		 }
+		System.out.println("************************************");
+		String firstName = "Tobias";
+		System.out.println("From the above list you chose " + firstName + " to get their details" + " ,please see below requested details");
+		
+		System.out.println("************************************");
+		
 	    for (int i=0; i<data.size(); i++)
 	    {
 	    	if(data.get(i).getFirst_name().equalsIgnoreCase(firstName))
@@ -54,18 +73,18 @@ public class AutomateReqResTest {
 	    }
 		
 		
-		
+		/*
 		List<files.Data> data1 = lu.getData();
 	    System.out.println(data1);
 	    
 	    
-	    System.out.println(email);
+	    //System.out.println(email);
 		Ad ad = lu.getAd();
 		System.out.println(ad.getCompany());
 		System.out.println(ad.getUrl());
 		System.out.println(ad.getText());
 		System.out.println(per_page);
-		
+		*/
 	
 	
 		
@@ -141,10 +160,10 @@ public class AutomateReqResTest {
 		System.out.println("Invalid Resource getCall 6");
 		System.out.println(invalidResource);
 		
+		
 		// Create user request number 7 (post request)
 		System.out.println("777777777777777777777777777777777777777");
-		
-		
+			
 		String createUser = given().queryParam("Content-Type", "application/json")
 		.body("{\n" + 
 				"    \"name\": \"Rizwan\",\n" + 
@@ -160,7 +179,6 @@ public class AutomateReqResTest {
 		System.out.println(js);
 		System.out.println("Here is Id >");
 		System.out.println(js.getInt("id"));
-		
 		
 		
 		// Update user details Update/Request number 8 (put request)
