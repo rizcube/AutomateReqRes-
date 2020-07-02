@@ -41,32 +41,7 @@ public class AutomateReqResTest {
 		
 		
 		
-		System.out.println("5555555555555555555555555555555555");
-		// List single Resource not found getCall 5
 		
-		int resourceId = 2;
-		String singleResource = given().queryParam("id", resourceId)
-		.when()
-		.get("/api/unknown/")
-		.then().assertThat().statusCode(200)
-		.extract().response().asString();
-						
-		System.out.println("Single Resource getCall 5");
-		System.out.println(singleResource);
-		
-		
-		// Get request invalid Resource getCall 6
-		System.out.println("666666666666666666666666666666666");
-		
-		int invalidResourceId = 23;
-		String invalidResource = given().queryParam("id", invalidResourceId)
-		.when()
-		.get("/api/unknown/")
-		.then().assertThat().statusCode(404)
-		.extract().response().asString();
-						
-		System.out.println("Invalid Resource getCall 6");
-		System.out.println(invalidResource);
 		
 		
 		// Create user request number 7 (post request)
