@@ -5,8 +5,8 @@ public class ResourceTests {
 	
 	public void testAll() {
 		test_get_resourceList_returns_HTTP_200();
-		test_get_singleResource_notFound_returns_HTTP_200();
-		test_get_invalidResource_returns_HTTP_404();
+		//test_get_singleResource_notFound_returns_HTTP_200();
+		//test_get_invalidResource_returns_HTTP_404();
 		
 	}
 
@@ -23,6 +23,7 @@ public class ResourceTests {
 				System.out.println(listResource);
 	}
 
+	
 	
 	private void test_get_singleResource_notFound_returns_HTTP_200() {
 
