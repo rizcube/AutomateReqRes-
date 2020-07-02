@@ -32,8 +32,9 @@ public class UserTests {
 		
 		//testFirstNames();
 		test_get_single_user_returns_http_200();
-		test_get_single_user_details_by_name();
+		test_get_usersList_with_details_by_name();
 		test_get_single_user_by_id();
+		test_get_single_user_by_ID_returns_http_404();
 
 	}
 	
@@ -43,6 +44,26 @@ public class UserTests {
 	RequestSpecification httpRequest = RestAssured.given();
 	String resource = "/api/users?page=2";
 	ListUsers lu;
+	
+	
+	private void test_get_single_user_by_ID_returns_http_404() {
+		
+		System.out.println("test_get_single_user_by_ID_returns_http_404() - User Story 3  SINGLE USER NOT FOUND");
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+		
+		int invalidId;
+		invalidId= 23;
+		
+		String singleUserNotFound = given().queryParam("id", invalidId)
+		.when()
+		.get("/api/users?page=2")
+		.then().assertThat().statusCode(404)
+		.extract().response().asString();
+
+		System.out.println(singleUserNotFound);
+		
+	}
+	
 	
 	
 	private void test_get_single_user_returns_http_200() {
@@ -92,7 +113,7 @@ public class UserTests {
 	}
 	
 	
-	private void test_get_single_user_details_by_name()
+	private void test_get_usersList_with_details_by_name()
 	
 	{
 		RestAssured.baseURI = "https://reqres.in/";
@@ -102,8 +123,8 @@ public class UserTests {
 		.then().assertThat().statusCode(200)
 		.extract().response().as(ListUsers.class);
 		
-		System.out.println("test_get_single_user_details_by_name()");
-		System.out.println("+++++++++++++++++++++++++++++++++++++++");
+		System.out.println("test_get_usersList_with_details_by_name() -  User Story 1 - LIST USERS");
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		
 		// query: Get user details by providing their first_name
 	    
@@ -150,7 +171,8 @@ public class UserTests {
 	
 	private void test_get_single_user_by_id() {
 		// TODO Auto-generated method stub
-		System.out.println("test_get_single_user_by_id()");
+		System.out.println("test_get_single_user_by_id() - User Story 2 SINGLE USER");
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 	
 		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
 				.when()
@@ -159,7 +181,7 @@ public class UserTests {
 				.extract().response().as(ListUsers.class);
 				
 				
-				System.out.println("+++++++++++++++++++++++++++++++++++");
+				
 				List<files.Data> data = lu.getData();
 				System.out.println(data.get(4).getId());
 		
@@ -179,11 +201,10 @@ public class UserTests {
 				System.out.println(singleUser);
 				Data d = new Data();
 				System.out.println(d.getAvatar());
-				
-	
 	
 	}
 
+	
 	
 	
 	

@@ -33,20 +33,7 @@ public class AutomateReqResTest {
 		
 
 		
-		System.out.println("333333333333333333333333333333333333333333");
-		
-		// single user not found getCall 3
-		
-		int invalidId;
-		invalidId= 23;
-		String singleUserNotFound = given().queryParam("id", invalidId)
-		.when()
-		.get("/api/users?page=2")
-		.then().assertThat().statusCode(404)
-		.extract().response().asString();
-				
-		System.out.println("User not found getCall 3");
-		System.out.println(singleUserNotFound);
+
 		
 		// List Resource getCall 4
 		System.out.println("4444444444444444444444444444444444444");
