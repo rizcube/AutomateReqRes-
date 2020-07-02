@@ -9,6 +9,7 @@ public class ListResources {
 	private int total_pages;
 	private List<ResourceData> data;
 	private Ad ad;
+	
 	public int getPage() {
 		return page;
 	}

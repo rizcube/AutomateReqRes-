@@ -1,6 +1,8 @@
 package files;
 import static io.restassured.RestAssured.*;
 
+import java.util.List;
+
 import io.restassured.parsing.Parser;
 
 public class ResourceTests {
@@ -13,8 +15,10 @@ public class ResourceTests {
 	}
 
 	private void test_get_resourceList_returns_HTTP_200() {
+		String[] expectedResourceNames = {"cerulean","fuchsia rose","true red","aqua sky","tigerlily","blue turquoise"};
+		
 		// List Resource getCall 4
-		System.out.println("4444444444444444444444444444444444444");
+		System.out.println("test_get_resourceList_returns_HTTP_200() api 4 - LIST <RESOURCE> ");
 		ListResources lr = given().expect().defaultParser(Parser.JSON)
 				.when()
 				.get("/api/unknown")
@@ -23,6 +27,22 @@ public class ResourceTests {
 								
 				System.out.println("List Resource getCall 4");
 				System.out.println(lr.getPage());
+				System.out.println(lr.getData().get(0).getName());
+				
+		
+				
+				int length = expectedResourceNames.length;
+				System.out.println("I am the object of resource");
+				
+				List<files.ResourceData> ResourceData = System.out.println(lr.getData());
+				
+				for (int i =0; i< length; i++) {
+					lr.getData().get(0).getName();
+				}
+				
+				
+				
+	
 	}
 
 	
