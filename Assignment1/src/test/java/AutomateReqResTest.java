@@ -15,6 +15,7 @@ import files.ListUsers;
 import files.ReUsableMethods;
 import files.ReUseableMethods;
 //import io.restassured.path.json.JsonPath;
+import files.ResourceTests;
 
 public class AutomateReqResTest {
 	
@@ -27,7 +28,10 @@ public class AutomateReqResTest {
 		// get users request getCall 1
 
 		UserTests userTests = new UserTests();
-		userTests.testAll();
+		//userTests.testAll();
+		
+		ResourceTests resourceTests = new ResourceTests();
+		resourceTests.testAll();
 			
 		/*
 		
@@ -35,16 +39,7 @@ public class AutomateReqResTest {
 		
 
 		
-		// List Resource getCall 4
-		System.out.println("4444444444444444444444444444444444444");
-		String listResource = given()
-		.when()
-		.get("/api/unknown")
-		.then().assertThat().statusCode(200)
-		.extract().response().asString();
-				
-		System.out.println("List Resource getCall 4");
-		System.out.println(listResource);
+		
 		
 		System.out.println("5555555555555555555555555555555555");
 		// List single Resource not found getCall 5
