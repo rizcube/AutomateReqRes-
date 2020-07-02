@@ -14,7 +14,7 @@ import files.UserTests;
 import files.ListUsers;
 import files.ReUsableMethods;
 import files.ReUseableMethods;
-import io.restassured.path.json.JsonPath;
+//import io.restassured.path.json.JsonPath;
 
 public class AutomateReqResTest {
 	
@@ -28,84 +28,10 @@ public class AutomateReqResTest {
 
 		UserTests userTests = new UserTests();
 		userTests.testAll();
+			
 		/*
 		
-		
-		
-		RestAssured.baseURI = "https://reqres.in/";
-		
-		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
-		.when()
-		.get("/api/users?page=2")
-		.then().assertThat().statusCode(200)
-		.extract().response().as(ListUsers.class);
-		
-		System.out.println("List users getCall 1");
-		System.out.println("************************************");
-		int page = lu.getPage();
-		int per_page = lu.getPer_page();
-		int total = lu.getTotal();
-		int total_pages = lu.getTotal_pages();
-		
-		// query: Get user details by providing their first_name
-	    
-		List<files.Data> data = lu.getData();
 
-		 for (int i=0; i<data.size(); i++)
-		 {
-			 System.out.println("First Name > " + data.get(i).getFirst_name());
-		 }
-		System.out.println("************************************");
-		String firstName = "Tobias";
-		System.out.println("From the above list you chose " + firstName + " to get their details" + " ,please see below requested details");
-		
-		System.out.println("************************************");
-		
-	    for (int i=0; i<data.size(); i++)
-	    {
-	    	if(data.get(i).getFirst_name().equalsIgnoreCase(firstName))
-	    	{
-	    		System.out.println("email > " + data.get(i).getEmail());
-	    		System.out.println("First Name > " + data.get(i).getFirst_name());
-	    		System.out.println("Last Name > " + data.get(i).getLast_name());
-	    		System.out.println("Avatar >  " +  data.get(i).getAvatar());
-	    	}
-	    }
-		
-		
-		/*
-		List<files.Data> data1 = lu.getData();
-	    System.out.println(data1);
-	    
-	    
-	    //System.out.println(email);
-		Ad ad = lu.getAd();
-		System.out.println(ad.getCompany());
-		System.out.println(ad.getUrl());
-		System.out.println(ad.getText());
-		System.out.println(per_page);
-		*/
-	
-	
-		
-	
-		
-		/*
-		
-		// get single user getCall 2
-		int id;
-		id = 2;
-		
-		System.out.println("222222222222222222222222222222222222");
-		String singleUser = given().queryParam("id", id)
-		.when()
-		.get("/api/users?page=2")
-		.then().assertThat().statusCode(200)
-		.extract().response().asString();
-		
-		System.out.println("I am single user getCall 2 ");
-		System.out.println(singleUser);
-		
 		
 		System.out.println("333333333333333333333333333333333333333333");
 		
