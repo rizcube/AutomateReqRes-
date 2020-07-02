@@ -1,6 +1,8 @@
 package files;
 import static io.restassured.RestAssured.*;
 
+import io.restassured.parsing.Parser;
+
 public class ResourceTests {
 	
 	public void testAll() {
@@ -13,14 +15,14 @@ public class ResourceTests {
 	private void test_get_resourceList_returns_HTTP_200() {
 		// List Resource getCall 4
 		System.out.println("4444444444444444444444444444444444444");
-		String listResource = given()
+		ListResources lr = given().expect().defaultParser(Parser.JSON)
 				.when()
 				.get("/api/unknown")
 				.then().assertThat().statusCode(200)
-				.extract().response().asString();
+				.extract().response().as(ListResources.class);
 								
 				System.out.println("List Resource getCall 4");
-				System.out.println(listResource);
+				System.out.println(lr.getPage());
 	}
 
 	
