@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.http.HttpRequest;
 import org.hamcrest.Matchers;
+import org.junit.Assert;
 
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
@@ -13,11 +14,12 @@ public class ResourceTests {
 	
 	public void testAll() {
 		//test_get_resourceList_returns_resourceList_with_HTTP_200();
-		test_get_singleResource_with_invalidId_returns_HTTP_404();
-		//test_get_invalidResource_returns_HTTP_404();
+		//test_get_singleResource_with_invalidId_returns_HTTP_404();
+		test_get_singleResource_withValidId_returns_HTTP_200();
 		
 	}
-
+	String lr;
+	
 	private void test_get_resourceList_returns_resourceList_with_HTTP_200() {
 		String[] expectedResourceNames = {"cerulean","fuchsia rose","true red","aqua sky","tigerlily","blue turquoise"};
 		
@@ -73,23 +75,24 @@ public class ResourceTests {
 	}
 	
 	
-	private void test_get_invalidResource_returns_HTTP_404() {
+	private void test_get_singleResource_withValidId_returns_HTTP_200() {
 		// Get request invalid Resource getCall 6
-		System.out.println("666666666666666666666666666666666");
 	
-		int invalidResourceId = 23;
-		String invalidResource = given().queryParam("id", invalidResourceId)
-		.when()
-		.get("/api/unknown/")
-		.then().assertThat().statusCode(404)
-		.extract().response().asString();
-					
-		System.out.println("Invalid Resource getCall 6");
-		System.out.println(invalidResource);
+		
+		int[] validIds = {1,2,3,4,5,6,7,8,9,10,11,12};
+		//int validResourceId = 2;
+		System.out.println("test_get_singleResource_withValidId_returns_HTTP_200() UserStory 5 - SINGLE <RESOURCE> ");
+		for (int i= 1; i<=validIds.length; i++) {
+			
+			String validResource = given().queryParam("id", i)
+			.when()
+			.get("/api/unknown/")
+			.then().assertThat().statusCode(200).body("isEmpty()", Matchers.is(false))
+			.extract().response().asString();
+			System.out.println(validResource);
+			System.out.println("");
+			
+		}
 	
-	
-	
-	}
-	
-
+	}				
 }

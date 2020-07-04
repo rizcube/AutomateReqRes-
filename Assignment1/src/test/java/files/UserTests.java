@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 import io.restassured.RestAssured;
@@ -57,7 +58,7 @@ public class UserTests {
 		String singleUserNotFound = given().queryParam("id", invalidId)
 		.when()
 		.get("/api/users?page=2")
-		.then().assertThat().statusCode(404)
+		.then().assertThat().statusCode(404).body("isEmpty()", Matchers.is(true))
 		.extract().response().asString();
 
 		System.out.println(singleUserNotFound);
