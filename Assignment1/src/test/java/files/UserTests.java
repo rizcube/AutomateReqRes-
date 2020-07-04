@@ -22,6 +22,7 @@ import org.junit.Assert;
 
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -32,10 +33,11 @@ public class UserTests {
 	public void testAll() {
 		
 		//testFirstNames();
-		test_get_single_user_returns_http_200();
-		test_get_usersList_with_details_by_name();
-		test_get_single_user_by_id();
-		test_get_single_user_by_ID_returns_http_404();
+		//test_get_single_user_returns_http_200();
+		//test_get_usersList_with_details_by_name();
+		//test_get_single_user_by_id();
+		//test_get_single_user_by_ID_returns_http_404();
+		test_create_user_returns_http_201();
 
 	}
 	
@@ -80,7 +82,7 @@ public class UserTests {
 		System.out.println("Expected Status code > " + statusCode.statusCode());
 		System.out.println("");
 		System.out.println("");
-	
+		
 	}	
 	
 	
@@ -207,7 +209,30 @@ public class UserTests {
 
 	
 	
+	public void test_create_user_returns_http_201()
+		{
+		
+		AddUser au = new AddUser();		
+		au.setName("ali");
+		au.setJob("Malang");
+		
+	// Create user request number 7 (post request)
+			System.out.println("test_get_single_user_by_ID_returns_http_404() - User Story 7  CREATE");
+			
+			String createUser = given().queryParam("Content-Type", "application/json")
+			.body(au)
+			.when().log().all().post("/api/users")
+			.then().log().all().assertThat().statusCode(201)
+			.header("server", "cloudflare").extract().response().asString();
+		
+			System.out.println(createUser);
+			JsonPath js = ReUseableMethods.rawToJson(createUser);
+			
+			System.out.println(js);
+			System.out.println("Here is Id >");
+			System.out.println(js.getInt("id"));
 	
+		}
 	
 	
 	

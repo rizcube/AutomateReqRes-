@@ -28,11 +28,13 @@ public class AutomateReqResTest {
 		// get users request getCall 1
 
 		UserTests userTests = new UserTests();
-		//userTests.testAll();
+		userTests.testAll();
 		
 		ResourceTests resourceTests = new ResourceTests();
-		resourceTests.testAll();
-			
+		//resourceTests.testAll();
+		
+		
+		
 		/*
 		
 

@@ -13,9 +13,9 @@ import io.restassured.response.Response;
 public class ResourceTests {
 	
 	public void testAll() {
-		//test_get_resourceList_returns_resourceList_with_HTTP_200();
-		//test_get_singleResource_with_invalidId_returns_HTTP_404();
+		test_get_resourceList_returns_resourceList_with_HTTP_200();
 		test_get_singleResource_withValidId_returns_HTTP_200();
+		test_get_singleResource_with_invalidId_returns_HTTP_404();
 		
 	}
 	String lr;
@@ -60,20 +60,6 @@ public class ResourceTests {
 				
 	}
 
-	private void test_get_singleResource_with_invalidId_returns_HTTP_404() {
-		
-		int resourceId = 100;
-		String singleResource = given().queryParam("id", resourceId)
-		.when()
-		.get("/api/unknown/")
-		.then().assertThat().statusCode(404).body("isEmpty()", Matchers.is(true))
-		.extract().response().asString();
-						
-		System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404() UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
-		System.out.println(singleResource);
-		
-	}
-	
 	
 	private void test_get_singleResource_withValidId_returns_HTTP_200() {
 		// Get request invalid Resource getCall 6
@@ -95,4 +81,21 @@ public class ResourceTests {
 		}
 	
 	}				
+	
+	private void test_get_singleResource_with_invalidId_returns_HTTP_404() {
+		
+		int resourceId = 100;
+		String singleResource = given().queryParam("id", resourceId)
+		.when()
+		.get("/api/unknown/")
+		.then().assertThat().statusCode(404).body("isEmpty()", Matchers.is(true))
+		.extract().response().asString();
+						
+		System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404() UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
+		System.out.println(singleResource);
+		
+	}
+	
+	
+	
 }
