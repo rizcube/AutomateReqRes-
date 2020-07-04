@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.*;
 import java.util.List;
 
 import org.apache.http.HttpRequest;
+import org.hamcrest.Matchers;
 
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
@@ -11,8 +12,8 @@ import io.restassured.response.Response;
 public class ResourceTests {
 	
 	public void testAll() {
-		test_get_resourceList_returns_resourceList_with_HTTP_200();
-		//test_get_singleResource_notFound_returns_HTTP_200();
+		//test_get_resourceList_returns_resourceList_with_HTTP_200();
+		test_get_singleResource_with_invalidId_returns_HTTP_404();
 		//test_get_invalidResource_returns_HTTP_404();
 		
 	}
@@ -28,13 +29,14 @@ public class ResourceTests {
 				.then().assertThat().statusCode(200)
 				.extract().response().as(ListResources.class);
 				
-				int length = expectedResourceNames.length;
+				int lengthExpectedList = expectedResourceNames.length;
 				List<files.ResourceData> ResourceData = lr.getData();
 				//System.out.println(ResourceData);
-				for (int i =0; i< length; i++) 
+				for (int i =0; i< lengthExpectedList; i++) 
 				{
+					String resourceName = expectedResourceNames[i];
 					lr.getData().get(i).getName();
-					if (lr.getData().get(i).getName().equalsIgnoreCase("fuchsia rose"))
+					if (lr.getData().get(i).getName().equalsIgnoreCase(resourceName))
 					{
 						System.out.println("Name >  "+ResourceData.get(i).getName());
 						System.out.println("Year >  "+ResourceData.get(i).getYear());
@@ -42,29 +44,32 @@ public class ResourceTests {
 						System.out.println("Pantone_value > "+ResourceData.get(i).getPantone_value());
 					}
 				
+				
+			
+				for (int j= 0; j< lengthExpectedList; j++) 
+				{
+					if (ResourceData.get(j).getName().equalsIgnoreCase(resourceName))
+					{
+						System.out.println(ResourceData.get(j).getName());
+					}
 				}
 				
+	}
 				
-				
-	
 	}
 
-	
-	
-	private void test_get_singleResource_notFound_returns_HTTP_200() {
-
-		System.out.println("5555555555555555555555555555555555");
-		// List single Resource not found getCall 5
+	private void test_get_singleResource_with_invalidId_returns_HTTP_404() {
 		
-		int resourceId = 2;
+		int resourceId = 100;
 		String singleResource = given().queryParam("id", resourceId)
 		.when()
 		.get("/api/unknown/")
-		.then().assertThat().statusCode(200)
+		.then().assertThat().statusCode(404).body("isEmpty()", Matchers.is(true))
 		.extract().response().asString();
 						
-		System.out.println("Single Resource getCall 5");
+		System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404() UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
 		System.out.println(singleResource);
+		
 	}
 	
 	
