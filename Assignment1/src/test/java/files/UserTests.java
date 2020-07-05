@@ -213,24 +213,27 @@ public class UserTests {
 		{
 		
 		AddUser au = new AddUser();		
-		au.setName("ali");
-		au.setJob("Malang");
+		au.setName("morpheus");
+		au.setJob("leader");
 		
 	// Create user request number 7 (post request)
 			System.out.println("test_get_single_user_by_ID_returns_http_404() - User Story 7  CREATE");
 			
-			String createUser = given().queryParam("Content-Type", "application/json")
+			Response createUser = (Response) given().queryParam("Content-Type", "application/json")
 			.body(au)
 			.when().log().all().post("/api/users")
-			.then().log().all().assertThat().statusCode(201)
-			.header("server", "cloudflare").extract().response().asString();
-		
-			System.out.println(createUser);
-			JsonPath js = ReUseableMethods.rawToJson(createUser);
+			.then().log().all().assertThat().statusCode(201).extract().response();
 			
+			
+			String createUserResponse = createUser.asString();
+			
+			System.out.println(createUserResponse);
+			JsonPath js = ReUseableMethods.rawToJson(createUserResponse);
+			System.out.println(au.getCreatedAt());
+			au.getJob();
 			System.out.println(js);
-			System.out.println("Here is Id >");
-			System.out.println(js.getInt("id"));
+			//System.out.println("Here is Id >");
+			//System.out.println(js.getInt("id"));
 	
 		}
 	
