@@ -22,11 +22,13 @@ import org.junit.Assert;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
 // test_get_single_user_returns_http_200 need to add a method
 public class UserTests {
@@ -278,12 +280,14 @@ public class UserTests {
 			
 			
 			RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://reqres.in/").setContentType(ContentType.JSON).build();
+			ResponseSpecification res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+			
 			
 			RequestSpecification reqSpec = given().spec(req)
 				.body(pu);
 			
 				Response patchUserRes = reqSpec.when().put("/api/users/2")
-				.then().assertThat().statusCode(200).header("Server", "cloudflare").extract().response();
+				.then().spec(res).extract().response();
 				
 				String patchUserStringRes = patchUserRes.asString();
 					
