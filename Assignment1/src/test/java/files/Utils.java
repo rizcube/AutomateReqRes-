@@ -1,4 +1,7 @@
-package resource;
+
+// request spec builders
+// response spec builders
+package files;
 
 public class Utils {
 

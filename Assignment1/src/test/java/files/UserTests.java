@@ -21,6 +21,8 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -37,7 +39,9 @@ public class UserTests {
 		//test_get_usersList_with_details_by_name();
 		//test_get_single_user_by_id();
 		//test_get_single_user_by_ID_returns_http_404();
-		test_create_user_returns_http_201();
+		//test_create_user_returns_http_201();
+		//test_put_userDetails_returns_http_200();
+		test_patch_update_returns_http_200();
 
 	}
 	
@@ -221,7 +225,7 @@ public class UserTests {
 			
 			Response createUser = (Response) given().header("Content-Type", "application/json")
 			.body(au)
-			.when().log().all().post("/api/users")
+			.when().post("/api/users")
 			.then().log().all().assertThat().statusCode(201).extract();
 			
 			
@@ -229,19 +233,92 @@ public class UserTests {
 			
 			System.out.println(createUserResponse);
 			
+			
 			JsonPath js = ReUseableMethods.rawToJson(createUserResponse);
 			//System.out.println(au.getCreatedAt());
 			System.out.println(js);
-			System.out.println(js.getClass());
-			
+			// need to do the validation
 	
 		}
 	
 	
+		public void test_put_userDetails_returns_http_200() 
+		{
+			// Update user details Update/Request number 8 (put request)
+			System.out.println("test_patch_userDetails_returns_http_200() User Story 8 UPDATE");
+			
+			AddUser pu = new AddUser();
+			pu.setName("morpheus");
+			pu.setJob("zion resident");
+			
+			String updateUser = given().header("Content-Type", "application/json; charset=utf-8")
+			.body(pu)
+			.when().put("/api/users/2")
+			.then().assertThat().statusCode(200).header("Server", "cloudflare")
+			.extract().response().asString();
+			
+			System.out.println("Updated user putCall 1");
+			System.out.println(updateUser);
+		
+			JsonPath uu = ReUseableMethods.rawToJson(updateUser);
+			
+			System.out.println(uu);
+			//System.out.println("Request 8(update request) > This user was updated at >");
+			//System.out.println(uu.getString("updatedAt"));
+
+		}
 	
-	
-	
-	
-	
-	
+		public void test_patch_update_returns_http_200() {
+			// Patch update Making partial changes to an existing resource / Request 9 (update request)
+			System.out.println("test_patch_update_returns_http_200() User Story 9 PATCH UPDATE REQUEST");
+			
+			AddUser pu = new AddUser();
+			pu.setName("morpheus");
+			pu.setJob("zion resident");
+			
+			
+			RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://reqres.in/").setContentType(ContentType.JSON).build();
+			
+			RequestSpecification reqSpec = given().spec(req)
+				.body(pu);
+			
+				Response patchUserRes = reqSpec.when().put("/api/users/2")
+				.then().assertThat().statusCode(200).header("Server", "cloudflare").extract().response();
+				
+				String patchUserStringRes = patchUserRes.asString();
+					
+				System.out.println("Partial changes to the existing user - Request 9 (update request)");
+				System.out.println(patchUserStringRes);
+				
+		}
+		
+		public void test_DELETE() {
+			// Delete user request number 10 
+			System.out.println("test_patch_update_returns_http_204() User Story 10 PATCH UPDATE REQUEST");
+			
+			Data ud = new Data();
+			ud.setEmail("eve.holt@reqres.in");
+			
+			Response deleteUser = given()
+			.when().delete("api/users/2")
+			.then().assertThat().statusCode(204).header("Server", "cloudflare").extract().response();
+			
+			String deleteUserResString = deleteUser.asString();		
+			System.out.println(deleteUserResString.isBlank());
+			
+			
+			String registerSuccess = given().header("Content-Type", "application/json")
+			.body("{\n" + 
+					"    \"email\": \"eve.holt@reqres.in\",\n" + 
+					"    \"password\": \"pistol\"\n" + 
+					"}")
+			.when().post("/api/register")
+			.then().assertThat().statusCode(204).header("Server","cloudflare")
+			.extract().response().asString();
+			
+			System.out.println(registerSuccess);
+		}
+		
+		
+		
 }

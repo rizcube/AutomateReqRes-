@@ -9,6 +9,7 @@ public class ResourceData {
 	private int year;
 	private String color;
 	private String pantone_value;
+	
 	public int getId() {
 		return id;
 	}
