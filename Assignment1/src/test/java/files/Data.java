@@ -7,6 +7,7 @@ public class Data {
 	private String first_name;
 	private String last_name;
 	private String avatar;
+	private String password;
 	
 	public int getId() {
 		return id;
@@ -37,6 +38,12 @@ public class Data {
 	}
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

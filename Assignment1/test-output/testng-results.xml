@@ -1,16 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-06T14:24:08Z" name="Default suite" finished-at="2020-07-06T14:24:09Z" duration-ms="1111">
+  <suite started-at="2020-07-06T18:11:58Z" name="Default suite" finished-at="2020-07-06T18:12:05Z" duration-ms="6883">
     <groups>
     </groups>
-    <test started-at="2020-07-06T14:24:08Z" name="Default test" finished-at="2020-07-06T14:24:09Z" duration-ms="1111">
+    <test started-at="2020-07-06T18:11:58Z" name="Default test" finished-at="2020-07-06T18:12:05Z" duration-ms="6883">
       <class name="files.UserTests">
-        <test-method signature="test_get_single_user_returns_http_200()[pri:0, instance:files.UserTests@512d92b]" started-at="2020-07-06T14:24:08Z" name="test_get_single_user_returns_http_200" finished-at="2020-07-06T14:24:09Z" duration-ms="1082" status="PASS">
+        <test-method signature="testFirstNames()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:11:58Z" name="testFirstNames" finished-at="2020-07-06T18:11:59Z" duration-ms="1685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFirstNames -->
+        <test-method signature="test_create_user_returns_http_201()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:11:59Z" name="test_create_user_returns_http_201" finished-at="2020-07-06T18:12:00Z" duration-ms="399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_user_returns_http_201 -->
+        <test-method signature="test_delayed_response_returns_http_200()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:00Z" name="test_delayed_response_returns_http_200" finished-at="2020-07-06T18:12:03Z" duration-ms="3247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_delayed_response_returns_http_200 -->
+        <test-method signature="test_delete_user_returns_http_204()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:03Z" name="test_delete_user_returns_http_204" finished-at="2020-07-06T18:12:03Z" duration-ms="183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_delete_user_returns_http_204 -->
+        <test-method signature="test_get_single_user_by_ID_returns_http_404()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:03Z" name="test_get_single_user_by_ID_returns_http_404" finished-at="2020-07-06T18:12:03Z" duration-ms="177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_single_user_by_ID_returns_http_404 -->
+        <test-method signature="test_get_single_user_by_id()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:03Z" name="test_get_single_user_by_id" finished-at="2020-07-06T18:12:04Z" duration-ms="198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_single_user_by_id -->
+        <test-method signature="test_get_single_user_returns_http_200()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_get_single_user_returns_http_200" finished-at="2020-07-06T18:12:04Z" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_returns_http_200 -->
+        <test-method signature="test_get_usersList_with_details_by_name()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_get_usersList_with_details_by_name" finished-at="2020-07-06T18:12:04Z" duration-ms="96" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_usersList_with_details_by_name -->
+        <test-method signature="test_login_successful_user_returns_http_200()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_login_successful_user_returns_http_200" finished-at="2020-07-06T18:12:04Z" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_login_successful_user_returns_http_200 -->
+        <test-method signature="test_login_unsuccessful_user_returns_http_400()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_login_unsuccessful_user_returns_http_400" finished-at="2020-07-06T18:12:04Z" duration-ms="145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_login_unsuccessful_user_returns_http_400 -->
+        <test-method signature="test_patch_update_returns_http_200()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_patch_update_returns_http_200" finished-at="2020-07-06T18:12:04Z" duration-ms="143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_patch_update_returns_http_200 -->
+        <test-method signature="test_put_userDetails_returns_http_200()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_put_userDetails_returns_http_200" finished-at="2020-07-06T18:12:04Z" duration-ms="142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_put_userDetails_returns_http_200 -->
+        <test-method signature="test_register_unsuccessful_user_returns_http_400()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_register_unsuccessful_user_returns_http_400" finished-at="2020-07-06T18:12:04Z" duration-ms="121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_register_unsuccessful_user_returns_http_400 -->
+        <test-method signature="test_register_user_return_http_200()[pri:0, instance:files.UserTests@3a7b503d]" started-at="2020-07-06T18:12:04Z" name="test_register_user_return_http_200" finished-at="2020-07-06T18:12:05Z" duration-ms="133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_register_user_return_http_200 -->
       </class> <!-- files.UserTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

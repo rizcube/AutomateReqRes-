@@ -1,16 +1,4 @@
 package files;
-/*
-UserTests
-addUser
-createUser
-listUser
-
-ResourceTests
-listResources
-singleResource
-singleResourceNotFound
-
-*/
 import static io.restassured.RestAssured.given;
 //import org.testng.annotations.Test;
 import java.util.ArrayList;
@@ -33,31 +21,17 @@ import io.restassured.specification.ResponseSpecification;
 
 // test_get_single_user_returns_http_200 need to add a method
 public class UserTests {
-	
-	
-	public void testAll() {
-		
-		//testFirstNames();
-		//test_get_single_user_returns_http_200();
-		//test_get_usersList_with_details_by_name();
-		//test_get_single_user_by_id();
-		//test_get_single_user_by_ID_returns_http_404();
-		//test_create_user_returns_http_201();
-		//test_put_userDetails_returns_http_200();
-		test_patch_update_returns_http_200();
-
-	}
-	
 
 	List<files.Data> data;
-	//String baseURI = RestAssured.baseURI = "https://reqres.in/";
+	String baseURI = RestAssured.baseURI = "https://reqres.in/";
 	//RequestSpecification httpRequest = RestAssured.given();
 	String resource = "/api/users?page=2";
 	ListUsers lu;
+	
 	RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://reqres.in/").setContentType(ContentType.JSON).build();
 	ResponseSpecification res200 = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 	ResponseSpecification res404 = new ResponseSpecBuilder().expectStatusCode(404).expectContentType(ContentType.JSON).build();
-
+	
 	@Test
 	private void test_get_single_user_by_ID_returns_http_404() {
 		
@@ -76,10 +50,9 @@ public class UserTests {
 		System.out.println(singleUserNotFoundStringRes);
 	}
 	
-	
 	@Test
 	private void test_get_single_user_returns_http_200() {
-		String baseURI = RestAssured.baseURI = "https://reqres.in/";
+		RestAssured.baseURI = "https://reqres.in/";
 		System.out.println("test_get_single_user_returns_http_200()");
 		
 		Response luRes=given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
@@ -89,17 +62,13 @@ public class UserTests {
 				.extract().response();
 				
 		ListUsers luClassRes = luRes.as(ListUsers.class);
-		System.out.println(luClassRes.getData().get(0).getFirst_name());
-		System.out.println("");
-		
+		System.out.println(luClassRes.getData().get(0).getFirst_name());	
 	}	
+	
 	@Test	
 	private void testFirstNames() {
 		
 		String[] expectedFirstNames = {"Michael","Lindsay" ,"Tobias", "Byron", "George", "Rachel" };
-		
-		//String baseURI = RestAssured.baseURI = "https://reqres.in/";
-		System.out.println("I am in API users class");
 			
 		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
 		.when()
@@ -136,15 +105,13 @@ public class UserTests {
 		
 		System.out.println("test_get_usersList_with_details_by_name() -  User Story 1 - LIST USERS");
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-		
-		// query: Get user details by providing their first_name
-	    
+		 
 		List<files.Data> data = lu.getData();
-		//System.out.println(data);
+		
 		
 		 for (int i=0; i<data.size(); i++)
 		 {
-			 //System.out.println("First Name > " + data.get(i).getFirst_name());
+			 System.out.println("First Name > " + data.get(i).getFirst_name());
 		 }
 		
 		 
@@ -177,9 +144,7 @@ public class UserTests {
 	    
 	}
 	
-	
-	
-	
+	@Test
 	private void test_get_single_user_by_id() {
 		// TODO Auto-generated method stub
 		System.out.println("test_get_single_user_by_id() - User Story 2 SINGLE USER");
@@ -191,16 +156,12 @@ public class UserTests {
 				.then().assertThat().statusCode(200)
 				.extract().response().as(ListUsers.class);
 				
-				
-				
 				List<files.Data> data = lu.getData();
-				System.out.println(data.get(4).getId());
-		
-		
+				System.out.println(data.get(4).getId());	
 		
 		// get single user getCall 2
 				int id;
-				id = 11;
+				id = 12;
 				
 				String singleUser = given().queryParam("id", id)
 				.when()
@@ -212,19 +173,16 @@ public class UserTests {
 				System.out.println(singleUser);
 				Data d = new Data();
 				System.out.println(d.getAvatar());
-	
 	}
 
-	
-	
+	@Test
 	public void test_create_user_returns_http_201()
-		{
+		{	
+			AddUser au = new AddUser();		
+			au.setName("morpheus");
+			au.setJob("leader");
 		
-		AddUser au = new AddUser();		
-		au.setName("morpheus");
-		au.setJob("leader");
-		
-	// Create user request number 7 (post request)
+			// Create user request number 7 (post request)
 			System.out.println("test_get_single_user_by_ID_returns_http_404() - User Story 7  CREATE");
 			
 			Response createUser = (Response) given().header("Content-Type", "application/json")
@@ -232,11 +190,8 @@ public class UserTests {
 			.when().post("/api/users")
 			.then().log().all().assertThat().statusCode(201).extract();
 			
-			
 			String createUserResponse = createUser.asString();
-			
 			System.out.println(createUserResponse);
-			
 			
 			JsonPath js = ReUseableMethods.rawToJson(createUserResponse);
 			//System.out.println(au.getCreatedAt());
@@ -245,7 +200,7 @@ public class UserTests {
 	
 		}
 	
-	
+		@Test
 		public void test_put_userDetails_returns_http_200() 
 		{
 			// Update user details Update/Request number 8 (put request)
@@ -295,32 +250,104 @@ public class UserTests {
 				
 		}
 		
-		public void test_DELETE() {
-			// Delete user request number 10 
+		
+		
+		
+		@Test
+		public void test_delete_user_returns_http_204() {
+			// Delete user request number 10
 			System.out.println("test_patch_update_returns_http_204() User Story 10 PATCH UPDATE REQUEST");
 			
 			Data ud = new Data();
 			ud.setEmail("eve.holt@reqres.in");
+			ud.setPassword("pistol");
 			
-			Response deleteUser = given()
+			
+			Response deleteUserRes = given().log().all()
+			.body(ud)
 			.when().delete("api/users/2")
 			.then().assertThat().statusCode(204).header("Server", "cloudflare").extract().response();
 			
-			String deleteUserResString = deleteUser.asString();		
-			System.out.println(deleteUserResString.isBlank());
+			String deleteUserStrRes = deleteUserRes.asString();	
+			System.out.println(deleteUserStrRes.isBlank());
 			
+		}	
+		@Test
+		public void test_register_user_return_http_200() {
 			
-			String registerSuccess = given().header("Content-Type", "application/json")
-			.body("{\n" + 
-					"    \"email\": \"eve.holt@reqres.in\",\n" + 
-					"    \"password\": \"pistol\"\n" + 
-					"}")
+			System.out.println("test_register_user_return_http_200() User Story 11 REGISTER - SUCCESSFUL");
+			Data ru = new Data();
+			ru.setEmail("eve.holt@reqres.in");
+			ru.setPassword("pistol");
+			
+			Response registerUserRes = given().spec(req)
+			.body(ru)
 			.when().post("/api/register")
-			.then().assertThat().statusCode(204).header("Server","cloudflare")
-			.extract().response().asString();
+			.then().spec(res200).extract().response();
 			
-			System.out.println(registerSuccess);
+			String registerUserStrRes = registerUserRes.asString();
+			System.out.println(registerUserStrRes);		
 		}
+		
+		@Test
+		public void test_register_unsuccessful_user_returns_http_400() {
+			System.out.println("test_register_user_return_http_200() User Story 12 REGISTER - UNSUCCESSFUL");
+			Data ru = new Data();
+			ru.setEmail("sydney@fife");
+			
+			String registerUserUnsuccessfulRes =given().spec(req)
+			.body(ru)
+			.when().post("/api/register")
+			.then().assertThat().statusCode(400).extract().asString();
+		
+			System.out.println(registerUserUnsuccessfulRes);
+		
+		}
+		@Test
+		public void test_login_successful_user_returns_http_200() {
+			System.out.println("test_register_user_return_http_200() User Story 13 LOGIN - SUCCESSFUL");
+			Data ls = new Data();
+			ls.setEmail("eve.holt@reqres.in");
+			ls.setPassword("cityslicka");
+			
+			String loginSuccessRes = given().spec(req)
+			.body(ls)
+			.when().post("/api/login")
+			.then().assertThat().statusCode(200).extract().asString();
+			
+			System.out.println(loginSuccessRes);
+			
+		}
+		
+		@Test
+		public void test_login_unsuccessful_user_returns_http_400() {
+			System.out.println("test_login_unsuccessful_user_returns_http_400 User Story 14 LOGIN - UNSUCCESSFUL");
+			Data ls = new Data();
+			ls.setEmail("peter@klaven");
+			
+			String loginUnsuccessRes = given().spec(req)
+					.body(ls)
+					.when().post("/api/login")
+					.then().assertThat().statusCode(400).extract().asString();
+			System.out.println(loginUnsuccessRes);
+			
+		}
+		@Test
+		public void test_delayed_response_returns_http_200() {
+			System.out.println("test_login_unsuccessful_user_returns_http_400 User Story 14 LOGIN - UNSUCCESSFUL");
+			
+			String delayedResponse = given().spec(req)
+			.when().get("/api/users?delay=3")
+		.then().assertThat().statusCode(200).extract().asString();
+			System.out.println(delayedResponse);
+			
+			System.out.println(ReUseableMethods.rawToJson(delayedResponse));
+			
+		}
+		
+		
+		
+		
 		
 		
 		
