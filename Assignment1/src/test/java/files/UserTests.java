@@ -77,24 +77,23 @@ public class UserTests {
 	}
 	
 	
-	
+	@Test
 	private void test_get_single_user_returns_http_200() {
-		
+		String baseURI = RestAssured.baseURI = "https://reqres.in/";
 		System.out.println("test_get_single_user_returns_http_200()");
-		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
+		
+		Response luRes=given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
 				.when()
 				.get(resource)
-				.then().assertThat().statusCode(200)
-				.extract().response().as(ListUsers.class);
-		
-		Response statusCode = httpRequest.get();
-		System.out.println("Expected Status code > " + statusCode.statusCode());
-		System.out.println("");
+				.then().spec(res200)
+				.extract().response();
+				
+		ListUsers luClassRes = luRes.as(ListUsers.class);
+		System.out.println(luClassRes.getData().get(0).getFirst_name());
 		System.out.println("");
 		
 	}	
-	
-	
+	@Test	
 	private void testFirstNames() {
 		
 		String[] expectedFirstNames = {"Michael","Lindsay" ,"Tobias", "Byron", "George", "Rachel" };
