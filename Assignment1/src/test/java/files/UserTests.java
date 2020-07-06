@@ -19,6 +19,7 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -49,28 +50,30 @@ public class UserTests {
 	
 
 	List<files.Data> data;
-	String baseURI = RestAssured.baseURI = "https://reqres.in/";
-	RequestSpecification httpRequest = RestAssured.given();
+	//String baseURI = RestAssured.baseURI = "https://reqres.in/";
+	//RequestSpecification httpRequest = RestAssured.given();
 	String resource = "/api/users?page=2";
 	ListUsers lu;
-	
-	
+	RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://reqres.in/").setContentType(ContentType.JSON).build();
+	ResponseSpecification res200 = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+	ResponseSpecification res404 = new ResponseSpecBuilder().expectStatusCode(404).expectContentType(ContentType.JSON).build();
+
+	@Test
 	private void test_get_single_user_by_ID_returns_http_404() {
 		
 		System.out.println("test_get_single_user_by_ID_returns_http_404() - User Story 3  SINGLE USER NOT FOUND");
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		
 		int invalidId;
-		invalidId= 23;
-		
-		String singleUserNotFound = given().queryParam("id", invalidId)
+		invalidId= 230;
+	
+		Response singleUserNotFoundRes = given().spec(req)
 		.when()
-		.get("/api/users?page=2")
-		.then().assertThat().statusCode(404).body("isEmpty()", Matchers.is(true))
-		.extract().response().asString();
-
-		System.out.println(singleUserNotFound);
-		
+		.get("/api/users/"+invalidId+"")
+		.then().spec(res404).extract().response();
+	
+		String singleUserNotFoundStringRes = singleUserNotFoundRes.asString();
+		System.out.println(singleUserNotFoundStringRes);
 	}
 	
 	
@@ -121,7 +124,7 @@ public class UserTests {
 		Assert.assertTrue(actualFristNamesList.equals(expectedFirstNamesList));
 	}
 	
-	
+	@Test
 	private void test_get_usersList_with_details_by_name()
 	
 	{
@@ -270,6 +273,7 @@ public class UserTests {
 
 		}
 	
+		@Test
 		public void test_patch_update_returns_http_200() {
 			// Patch update Making partial changes to an existing resource / Request 9 (update request)
 			System.out.println("test_patch_update_returns_http_200() User Story 9 PATCH UPDATE REQUEST");
@@ -279,15 +283,11 @@ public class UserTests {
 			pu.setJob("zion resident");
 			
 			
-			RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://reqres.in/").setContentType(ContentType.JSON).build();
-			ResponseSpecification res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-			
-			
 			RequestSpecification reqSpec = given().spec(req)
 				.body(pu);
 			
 				Response patchUserRes = reqSpec.when().put("/api/users/2")
-				.then().spec(res).extract().response();
+				.then().spec(res200).extract().response();
 				
 				String patchUserStringRes = patchUserRes.asString();
 					
