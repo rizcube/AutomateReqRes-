@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="files.UserTests">
+      <class name="files.DelayedResponseTests">
         <methods>
-          <include name="test_register_unsuccessful_user_return_http_200"/>
+          <include name="test_get_delayed_response_returns_HTTP_200"/>
         </methods>
-      </class> <!-- files.UserTests -->
+      </class> <!-- files.DelayedResponseTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

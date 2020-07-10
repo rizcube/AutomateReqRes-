@@ -1,12 +1,16 @@
 package files;
 import static io.restassured.RestAssured.given;
+
+import java.io.UnsupportedEncodingException;
 //import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -18,9 +22,10 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import static org.hamcrest.Matchers.*;
 
 // test_get_single_user_returns_http_200 need to add a method
-public class UserTests {
+public class UserTests extends Data {
 
 	List<files.Data> data;
 	String baseURI = RestAssured.baseURI = "https://reqres.in/";
@@ -62,36 +67,35 @@ public class UserTests {
 				.extract().response();
 				
 		ListUsers luClassRes = luRes.as(ListUsers.class);
-		System.out.println(luClassRes.getData().get(0).getFirst_name());	
+		System.out.println(luClassRes.getData().get(0).getFirst_name());
+		
+		
 	}	
 	
 	@Test	
 	private void testFirstNames() {
 		
 		String[] expectedFirstNames = {"Michael","Lindsay" ,"Tobias", "Byron", "George", "Rachel" };
-			
 		ListUsers lu =given().queryParam("page", 2).expect().defaultParser(Parser.JSON)
 		.when()
 		.get(resource)
 		.then().assertThat().statusCode(200)
 		.extract().response().as(ListUsers.class);
 		
-	    ArrayList<String> actualFristNamesList = new ArrayList<String>();
-		
+		lu.getData().get(1).getFirst_name();	
+	    ArrayList<String> actualFristNamesList = new ArrayList<String>();		
 	    List<files.Data> data = lu.getData();
 
 		for (int i=0; i<data.size(); i++)
 			{
-				Assert.assertTrue(actualFristNamesList.add(data.get(i).getFirst_name()));
-			
+				Assert.assertTrue(actualFristNamesList.add(data.get(i).getFirst_name()));	
 			}	
-		
 		List<String> expectedFirstNamesList = Arrays.asList(expectedFirstNames);
 		System.out.println("Expected First Names List >" + expectedFirstNamesList);
 		System.out.println("Actual First Names List   >"+ actualFristNamesList);
 		Assert.assertTrue(actualFristNamesList.equals(expectedFirstNamesList));
 	}
-	
+
 	@Test
 	private void test_get_usersList_with_details_by_name()
 	
@@ -107,7 +111,6 @@ public class UserTests {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		 
 		List<files.Data> data = lu.getData();
-		
 		
 		 for (int i=0; i<data.size(); i++)
 		 {
@@ -193,9 +196,9 @@ public class UserTests {
 			String createUserResponse = createUser.asString();
 			System.out.println(createUserResponse);
 			
-			JsonPath js = ReUseableMethods.rawToJson(createUserResponse);
+			JsonPath js = Utils.rawToJson(createUserResponse);
 			//System.out.println(au.getCreatedAt());
-			System.out.println(js);
+			System.out.println(js.getInt("id"));
 			// need to do the validation
 	
 		}
@@ -210,25 +213,29 @@ public class UserTests {
 			pu.setName("morpheus");
 			pu.setJob("zion resident");
 			
-			String updateUser = given().header("Content-Type", "application/json; charset=utf-8")
+			Response updateUser = given().header("Content-Type", "application/json; charset=utf-8")
 			.body(pu)
 			.when().put("/api/users/2")
-			.then().assertThat().statusCode(200).header("Server", "cloudflare")
-			.extract().response().asString();
+			.then().assertThat().spec(res200)
+			.header("Server", "cloudflare")
+			.extract().response();
 			
-			System.out.println("Updated user putCall 1");
-			System.out.println(updateUser);
-		
-			JsonPath uu = ReUseableMethods.rawToJson(updateUser);
+			String updateUserStringResponse = updateUser.asString();
+			System.out.println(updateUserStringResponse);
+			JsonPath puJson = Utils.rawToJson(updateUserStringResponse);
 			
-			System.out.println(uu);
-			//System.out.println("Request 8(update request) > This user was updated at >");
-			//System.out.println(uu.getString("updatedAt"));
+			String actualName = puJson.getString("name");
+			String actualJob = puJson.getString("job");
+			String updatedAt = puJson.getString("updatedAt");
+			System.out.println(updatedAt);
 
+			Assert.assertEquals(actualName, "morpheus");
+			Assert.assertEquals(actualJob, "zion resident");			
 		}
 	
 		@Test
-		public void test_patch_update_returns_http_200() {
+		public void test_patch_update_returns_http_200() 
+		{
 			// Patch update Making partial changes to an existing resource / Request 9 (update request)
 			System.out.println("test_patch_update_returns_http_200() User Story 9 PATCH UPDATE REQUEST");
 			
@@ -238,20 +245,24 @@ public class UserTests {
 			
 			
 			RequestSpecification reqSpec = given().spec(req)
-				.body(pu);
+			.body(pu);
 			
-				Response patchUserRes = reqSpec.when().put("/api/users/2")
-				.then().spec(res200).extract().response();
+			Response patchUserRes = reqSpec.when().put("/api/users/2")
+			.then().spec(res200).extract().response();
 				
-				String patchUserStringRes = patchUserRes.asString();
-					
-				System.out.println("Partial changes to the existing user - Request 9 (update request)");
-				System.out.println(patchUserStringRes);
+			String patchUserStringRes = patchUserRes.asString();
+			JsonPath pu1 = Utils.rawToJson(patchUserStringRes);
+			pu1.getString("updatedAt");
+			pu1.getString("name");
+			pu1.get("job");
 				
+			System.out.println(pu1.getString("name"));
+			System.out.println(pu1.getString("job"));
+			System.out.println(pu1.getString("updatedAt"));
+				
+			Assert.assertEquals(pu1.getString("name"), "morpheus");
+			Assert.assertEquals(pu1.getString("job"), "zion resident");			
 		}
-		
-		
-		
 		
 		@Test
 		public void test_delete_user_returns_http_204() {
@@ -262,14 +273,14 @@ public class UserTests {
 			ud.setEmail("eve.holt@reqres.in");
 			ud.setPassword("pistol");
 			
-			
-			Response deleteUserRes = given().log().all()
+			Response deleteUserRes = given()
 			.body(ud)
 			.when().delete("api/users/2")
 			.then().assertThat().statusCode(204).header("Server", "cloudflare").extract().response();
 			
-			String deleteUserStrRes = deleteUserRes.asString();	
-			System.out.println(deleteUserStrRes.isBlank());
+			String deleteUserStringResponse = deleteUserRes.asString();
+			System.out.println(deleteUserStringResponse);
+			Assert.assertEquals("", deleteUserStringResponse);
 			
 		}	
 		@Test
@@ -279,6 +290,8 @@ public class UserTests {
 			Data ru = new Data();
 			ru.setEmail("eve.holt@reqres.in");
 			ru.setPassword("pistol");
+			int expectedId = 4;
+			String expectedToken = "QpwL5tke4Pnpja7X4";
 			
 			Response registerUserRes = given().spec(req)
 			.body(ru)
@@ -286,6 +299,21 @@ public class UserTests {
 			.then().spec(res200).extract().response();
 			
 			String registerUserStrRes = registerUserRes.asString();
+			
+			JsonPath ru1 = Utils.rawToJson(registerUserStrRes);
+			int actualId = ru1.getInt("id");
+			String actualToken = ru1.getString("token");
+			
+			System.out.println(expectedId);
+			System.out.println(actualId);
+			System.out.println(expectedToken);
+			System.out.println(actualToken);
+			System.out.println(ru.getEmail());
+			System.out.println(ru.getPassword());
+			
+			Assert.assertEquals(expectedId, actualId);
+			Assert.assertEquals(expectedToken, actualToken);
+			
 			System.out.println(registerUserStrRes);		
 		}
 		
@@ -315,9 +343,17 @@ public class UserTests {
 			.when().post("/api/login")
 			.then().assertThat().statusCode(200).extract().asString();
 			
-			System.out.println(loginSuccessRes);
-			
+			System.out.println(loginSuccessRes);		
 		}
+		
+		
+		@DataProvider
+		public void getData() 
+		{
+			new object[][] {{"eve.holt@reqres.in","cityslicka"},{"eve.holt@reqres.in","cityslicka"},{"eve.holt@reqres.in","cityslicka"}};
+		}
+		
+		
 		
 		@Test
 		public void test_login_unsuccessful_user_returns_http_400() {
@@ -329,26 +365,30 @@ public class UserTests {
 					.body(ls)
 					.when().post("/api/login")
 					.then().assertThat().statusCode(400).extract().asString();
-			System.out.println(loginUnsuccessRes);
-			
+			System.out.println(loginUnsuccessRes);	
 		}
+		
 		@Test
-		public void test_delayed_response_returns_http_200() {
-			System.out.println("test_login_unsuccessful_user_returns_http_400 User Story 14 LOGIN - UNSUCCESSFUL");
+		public void test_delayed_response_returns_http_200() throws UnsupportedEncodingException {
 			
-			String delayedResponse = given().spec(req)
+			ResourceData rd = new ResourceData();
+			ListResources lr = new ListResources();
+			
+			int expectedPerPage = 1;
+			int expectedTotal = 12;
+			int expectedTotalPages = 2;
+			
+			System.out.println("test_delayed_response_returns_http_200() User Story 15 DELAYED RESPONSE");
+			Response delayedResponse = given().spec(req).expect().defaultParser(Parser.JSON)
 			.when().get("/api/users?delay=3")
-		.then().assertThat().statusCode(200).extract().asString();
-			System.out.println(delayedResponse);
+			.then().assertThat().statusCode(200).extract().response();
 			
-			System.out.println(ReUseableMethods.rawToJson(delayedResponse));
+			String delayedStringResponse = delayedResponse.asString();
+			System.out.println(delayedStringResponse);
+			JsonPath dr = Utils.rawToJson(delayedStringResponse);
+			int actualPageNumber = dr.getInt("page");		
+			Assert.assertEquals(expectedPerPage, actualPageNumber);
 			
 		}
-		
-		
-		
-		
-		
-		
 		
 }

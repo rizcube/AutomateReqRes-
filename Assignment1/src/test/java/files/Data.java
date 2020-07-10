@@ -45,6 +45,10 @@ public class Data {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Data isEqualTo(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

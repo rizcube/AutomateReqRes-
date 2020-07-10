@@ -1,7 +1,5 @@
 package files;
 
-import io.cucumber.java.it.Date;
-
 public class ResourceData {
 	
 	private int id;
