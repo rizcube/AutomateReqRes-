@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.http.HttpRequest;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -105,9 +106,26 @@ public class ResourceTests {
 		}
 	
 	}			
+	@Test(dataProvider = "ValidIds" )
+	private void test_(int validId) {
+		// Get request invalid Resource getCall 6
+		System.out.println("test_get_singleResource_withValidId_returns_HTTP_200() UserStory 5 - SINGLE <RESOURCE> ");				
+		String validResource = given().queryParam("id", validId).spec(req)
+				.when()
+				.get("/api/unknown/")
+				.then().assertThat().statusCode(200).body("isEmpty()", Matchers.is(false))
+				.extract().response().asString();
 	
-	@Test
-	private void test_get_singleResource_with_invalidId_returns_HTTP_404() {
+	}			
+	
+	@DataProvider(name = "ValidIds")
+	public Object[] getValidId() {
+		return new Object[] {1,2,3,4,5,6,7,8,9,10,11,12};
+	}
+	
+	
+	@Test (dataProvider= "inValidIds")
+	private void test_get_singleResource_with_invalidId_returns_HTTP_404(int inValidId) {
 		
 		int resourceId = 100;
 		String singleResource = given().queryParam("id", resourceId).spec(req)
@@ -119,5 +137,11 @@ public class ResourceTests {
 		System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404() UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
 		System.out.println(singleResource);	
 	}
+	
+	@DataProvider(name = "inValidIds")
+	public Object[] getinValidIds() {
+		return new Object[] {-1,0,13,15};
+	}
+	
 	
 }

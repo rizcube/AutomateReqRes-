@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="files.DelayedResponseTests">
+      <class name="files.ResourceTests">
         <methods>
-          <include name="test_get_delayed_response_returns_HTTP_200"/>
+          <include name="test_" invocation-numbers="12"/>
         </methods>
-      </class> <!-- files.DelayedResponseTests -->
+      </class> <!-- files.ResourceTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

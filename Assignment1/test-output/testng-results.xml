@@ -1,75 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="19" passed="19" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-10T15:52:56Z" name="Default suite" finished-at="2020-07-10T15:52:58Z" duration-ms="2365">
+  <suite started-at="2020-07-13T11:29:08Z" name="Default suite" finished-at="2020-07-13T11:29:13Z" duration-ms="4862">
     <groups>
     </groups>
-    <test started-at="2020-07-10T15:52:56Z" name="Default test" finished-at="2020-07-10T15:52:58Z" duration-ms="2365">
-      <class name="files.DelayedResponseTests">
-        <test-method signature="test_get_delayed_response_returns_HTTP_200()[pri:0, instance:files.DelayedResponseTests@3e11f9e9]" started-at="2020-07-10T15:52:56Z" name="test_get_delayed_response_returns_HTTP_200" finished-at="2020-07-10T15:52:58Z" duration-ms="2338" status="FAIL">
-          <exception class="io.restassured.path.json.exception.JsonPathException">
-            <message>
-              <![CDATA[Failed to parse the JSON document]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
-at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
-at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
-at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
-at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
-at io.restassured.path.json.JsonPath.get(JsonPath.java:190)
-at files.DelayedResponseTests.test_get_delayed_response_returns_HTTP_200(DelayedResponseTests.java:32)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 2, while reading 'i', no possible valid JSON value or punctuation could be recognized.
-at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
-at groovy.json.JsonLexer$nextToken.call(Unknown Source)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseObject(ConfigurableJsonSlurper.groovy:202)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
-at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:105)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
-at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
-at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
-... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.restassured.path.json.exception.JsonPathException -->
+    <test started-at="2020-07-13T11:29:08Z" name="Default test" finished-at="2020-07-13T11:29:13Z" duration-ms="4862">
+      <class name="files.ResourceTests">
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:08Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:09Z" duration-ms="1460" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_delayed_response_returns_HTTP_200 -->
-      </class> <!-- files.DelayedResponseTests -->
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:09Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:09Z" duration-ms="97" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:09Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="125" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="84" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="77" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="172" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="78" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="109" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="69" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="71" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="142" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:10Z" name="test_" data-provider="ValidIds" finished-at="2020-07-13T11:29:10Z" duration-ms="94" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ -->
+        <test-method signature="test_get_resourceList_returns_resourceList_with_HTTP_200()[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:11Z" name="test_get_resourceList_returns_resourceList_with_HTTP_200" finished-at="2020-07-13T11:29:11Z" duration-ms="710" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_resourceList_returns_resourceList_with_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200()[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:11Z" name="test_get_singleResource_withValidId_returns_HTTP_200" finished-at="2020-07-13T11:29:12Z" duration-ms="1111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:12Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-13T11:29:12Z" duration-ms="111" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:12Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-13T11:29:13Z" duration-ms="69" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:13Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-13T11:29:13Z" duration-ms="101" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:13Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-13T11:29:13Z" duration-ms="68" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_list_resource_return_HTTP_200()[pri:0, instance:files.ResourceTests@255990cc]" started-at="2020-07-13T11:29:13Z" name="test_list_resource_return_HTTP_200" finished-at="2020-07-13T11:29:13Z" duration-ms="60" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+      </class> <!-- files.ResourceTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

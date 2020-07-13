@@ -321,7 +321,7 @@ public class UserTests extends Data {
 		public void test_register_unsuccessful_user_returns_http_400() {
 			System.out.println("test_register_user_return_http_200() User Story 12 REGISTER - UNSUCCESSFUL");
 			Data ru = new Data();
-			ru.setEmail("sydney@fife");
+			ru.setEmail("sydneey@fife");
 			
 			String registerUserUnsuccessfulRes =given().spec(req)
 			.body(ru)
@@ -331,12 +331,12 @@ public class UserTests extends Data {
 			System.out.println(registerUserUnsuccessfulRes);
 		
 		}
-		@Test
-		public void test_login_successful_user_returns_http_200() {
+		@Test(dataProvider = "UserEmailPassword")
+		public void test_login_successful_user_returns_http_200(String email, String password) {
 			System.out.println("test_register_user_return_http_200() User Story 13 LOGIN - SUCCESSFUL");
 			Data ls = new Data();
-			ls.setEmail("eve.holt@reqres.in");
-			ls.setPassword("cityslicka");
+			ls.setEmail(email);
+			ls.setPassword(password);
 			
 			String loginSuccessRes = given().spec(req)
 			.body(ls)
@@ -347,10 +347,11 @@ public class UserTests extends Data {
 		}
 		
 		
-		@DataProvider
-		public void getData() 
+		@DataProvider(name="UserEmailPassword")
+		public Object[][] getData() 
 		{
-			new object[][] {{"eve.holt@reqres.in","cityslicka"},{"eve.holt@reqres.in","cityslicka"},{"eve.holt@reqres.in","cityslicka"}};
+			return new Object[][] {{"eve.holt@reqres.in","cityslicka"},{"eve.holt@reqres.in","cityslicka"},{"eve.holt@reqres.in","cityslicka"}};
+			
 		}
 		
 		
@@ -366,29 +367,6 @@ public class UserTests extends Data {
 					.when().post("/api/login")
 					.then().assertThat().statusCode(400).extract().asString();
 			System.out.println(loginUnsuccessRes);	
-		}
-		
-		@Test
-		public void test_delayed_response_returns_http_200() throws UnsupportedEncodingException {
-			
-			ResourceData rd = new ResourceData();
-			ListResources lr = new ListResources();
-			
-			int expectedPerPage = 1;
-			int expectedTotal = 12;
-			int expectedTotalPages = 2;
-			
-			System.out.println("test_delayed_response_returns_http_200() User Story 15 DELAYED RESPONSE");
-			Response delayedResponse = given().spec(req).expect().defaultParser(Parser.JSON)
-			.when().get("/api/users?delay=3")
-			.then().assertThat().statusCode(200).extract().response();
-			
-			String delayedStringResponse = delayedResponse.asString();
-			System.out.println(delayedStringResponse);
-			JsonPath dr = Utils.rawToJson(delayedStringResponse);
-			int actualPageNumber = dr.getInt("page");		
-			Assert.assertEquals(expectedPerPage, actualPageNumber);
-			
 		}
 		
 }
