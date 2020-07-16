@@ -30,8 +30,8 @@ public class DelayedResponseTests {
 		
 		ValidatableResponse delayedRes =
 		given().log().all().queryParam("delay", 3).spec(req).expect().defaultParser(Parser.JSON)
-		.when().get("/api/users?delay=3")
-		.then().log().all().assertThat().time(greaterThan(3L), TimeUnit.SECONDS);
+		.when().get("/api/users")
+		.then().log().all().assertThat().time(lessThan(3L), TimeUnit.SECONDS);
 	}
 	
 	
@@ -62,13 +62,13 @@ public class DelayedResponseTests {
 		String delayedStringRes = delayedRes.asString();
 		JsonPath js = Utils.rawToJson(delayedStringRes);
 		System.out.println(js.get("page"));
-		List dataList = js.get("data");
-		System.out.println(dataList.size());
+		List<Data> dataList = js.getList("data");
+		System.out.println(dataList);
 		
 		
 		//DelayedResponse dr = new DelayedResponse();
 		//System.out.println(dr.getPage());
-		//System.out.println(dr.getData().getId());
+		System.out.println(dataList.get(0).getEmail());
 		
 	
 		
