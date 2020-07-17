@@ -1,12 +1,14 @@
 package files;
 
+import java.util.List;
+
 public class DelayedResponse {	
 	
 	private int page;
 	private int per_page;
 	private int total;
 	private int total_pages;
-	private Data data;
+	private List<Data> data;
 	private Ad ad;
 	
 	public int getPage() {
@@ -33,10 +35,10 @@ public class DelayedResponse {
 	public void setTotal_pages(int total_pages) {
 		this.total_pages = total_pages;
 	}
-	public Data getData() {
+	public List<Data> getData() {
 		return data;
 	}
-	public void setData(Data data) {
+	public void setData(List<Data> data) {
 		this.data = data;
 	}
 	public Ad getAd() {
