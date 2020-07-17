@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-07-17T15:38:37Z" name="Default suite" finished-at="2020-07-17T15:38:42Z" duration-ms="5357">
+    <groups>
+    </groups>
+    <test started-at="2020-07-17T15:38:37Z" name="Default test" finished-at="2020-07-17T15:38:42Z" duration-ms="5357">
+      <class name="files.DelayedResponseTests">
+        <test-method signature="test_Response_Time_returns_HTTP_200_UStory15()[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:37Z" name="test_Response_Time_returns_HTTP_200_UStory15" finished-at="2020-07-17T15:38:41Z" duration-ms="4288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Response_Time_returns_HTTP_200_UStory15 -->
+        <test-method signature="test_get_delayed_response_returns_HTTP_200_UStory15(int, int, int, int, int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:41Z" name="test_get_delayed_response_returns_HTTP_200_UStory15" data-provider="expectedDelayedRes" finished-at="2020-07-17T15:38:42Z" duration-ms="438" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[george.bluth@reqres.in]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[George]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Bluth]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_delayed_response_returns_HTTP_200_UStory15 -->
+        <test-method signature="test_get_delayed_response_returns_HTTP_200_UStory15(int, int, int, int, int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:42Z" name="test_get_delayed_response_returns_HTTP_200_UStory15" data-provider="expectedDelayedRes" finished-at="2020-07-17T15:38:42Z" duration-ms="111" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[janet.weaver@reqres.in]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Janet]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Weaver]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_delayed_response_returns_HTTP_200_UStory15 -->
+        <test-method signature="test_get_delayed_response_returns_HTTP_200_UStory15(int, int, int, int, int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:42Z" name="test_get_delayed_response_returns_HTTP_200_UStory15" data-provider="expectedDelayedRes" finished-at="2020-07-17T15:38:42Z" duration-ms="141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[emma.wong@reqres.in]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Emma]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Wong]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_delayed_response_returns_HTTP_200_UStory15 -->
+        <test-method signature="test_get_delayed_response_returns_HTTP_200_UStory15(int, int, int, int, int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:42Z" name="test_get_delayed_response_returns_HTTP_200_UStory15" data-provider="expectedDelayedRes" finished-at="2020-07-17T15:38:42Z" duration-ms="112" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[eve.holt@reqres.in]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Eve]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Holt]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_delayed_response_returns_HTTP_200_UStory15 -->
+        <test-method signature="test_get_delayed_response_returns_HTTP_200_UStory15(int, int, int, int, int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:42Z" name="test_get_delayed_response_returns_HTTP_200_UStory15" data-provider="expectedDelayedRes" finished-at="2020-07-17T15:38:42Z" duration-ms="130" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[charles.morris@reqres.in]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Charles]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Morris]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_delayed_response_returns_HTTP_200_UStory15 -->
+        <test-method signature="test_get_delayed_response_returns_HTTP_200_UStory15(int, int, int, int, int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.DelayedResponseTests@316bcf94]" started-at="2020-07-17T15:38:42Z" name="test_get_delayed_response_returns_HTTP_200_UStory15" data-provider="expectedDelayedRes" finished-at="2020-07-17T15:38:42Z" duration-ms="95" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[tracey.ramos@reqres.in]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Tracey]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Ramos]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_delayed_response_returns_HTTP_200_UStory15 -->
+      </class> <!-- files.DelayedResponseTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
