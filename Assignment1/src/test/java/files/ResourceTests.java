@@ -11,6 +11,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import io.cucumber.core.gherkin.messages.internal.gherkin.internal.com.eclipsesource.json.JsonArray;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -27,9 +28,8 @@ public class ResourceTests {
 	ResponseSpecification res404 = new ResponseSpecBuilder().expectStatusCode(404).expectContentType(ContentType.JSON).build();
 		
 	@Test(dataProvider = "validIds" )
-	private void test_get_singleResource_withValidId_returns_HTTP_200(int validId) {
-		// Get request invalid Resource getCall 6
-		System.out.println("test_get_singleResource_withValidId_returns_HTTP_200() UserStory 5 - SINGLE <RESOURCE> ");				
+	private void test_get_singleResource_withValidId_returns_HTTP_200_UStory5(int validId) {
+		// Get request invalid Resource getCall 6			
 		String validResource = given().queryParam("id", validId).spec(req)
 				.when()
 				.get("/api/unknown/")
@@ -38,18 +38,71 @@ public class ResourceTests {
 	}			
 	
 	@Test (dataProvider= "inValidIds")
-	private void test_get_singleResource_with_invalidId_returns_HTTP_404(int inValidId) {
+	private void test_get_singleResource_with_invalidId_returns_HTTP_404_UStory6(int inValidId) {
 		
 		int resourceId = 100;
 		String singleResource = given().queryParam("id", resourceId).spec(req)
 		.when()
 		.get("/api/unknown/")
 		.then().assertThat().statusCode(404).body("isEmpty()", Matchers.is(true))
-		.extract().response().asString();
-						
-		System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404() UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
-		System.out.println(singleResource);	
+		.extract().response().asString();				
+		//System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404() UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
+		//System.out.println(singleResource);	
 	}
+	
+	
+	@Test(dataProvider = "expectedResourceList")
+	private void test_list_resource_return_HTTP_200_UStory4(int index,int page,int per_page, int total, 
+			int total_pages,int id,String name, int year, String color, String pantone_value, String company, String url, String text) 
+	{
+		ListResources lrClassRes = given().spec(req)
+		.when().get("/api/unknown")
+		.then().assertThat().extract().response().as(ListResources.class);
+			
+			//System.out.println(lrClassRes);
+			int actualPage = lrClassRes.getPage();
+			int actualPerPage = lrClassRes.getPer_page();
+			int actualTotal = lrClassRes.getTotal();
+			int actualTotal_pages = lrClassRes.getTotal_pages();
+			int actualId = lrClassRes.getData().get(index).getId();
+			String actualName = lrClassRes.getData().get(index).getName();
+			int actualYear = lrClassRes.getData().get(index).getYear();
+			String actualColor = lrClassRes.getData().get(index).getColor();
+			String actualPantoneValue = lrClassRes.getData().get(index).getPantone_value();
+			String actualCompany = lrClassRes.getAd().getCompany();
+			String actualUrl = lrClassRes.getAd().getUrl();
+			String actualText = lrClassRes.getAd().getText();
+			
+			Assert.assertEquals(actualPage, page);
+			Assert.assertEquals(actualPerPage, per_page);
+			Assert.assertEquals(actualTotal, total);
+			Assert.assertEquals(actualTotal_pages, total_pages);
+			Assert.assertEquals(actualId, id);
+			Assert.assertEquals(actualName, name);
+			Assert.assertEquals(actualYear, year);
+			Assert.assertEquals(actualColor, color);
+			Assert.assertEquals(actualPantoneValue, pantone_value);
+			Assert.assertEquals(actualCompany, company);
+			Assert.assertEquals(actualUrl, url);
+			Assert.assertEquals(actualText, text);	
+	}
+	
+	
+	
+	@DataProvider(name="expectedResourceList")
+	public Object[][] getExpectedResourceList()
+	{
+		return new Object[][]
+		{
+			{0,1,6,12,2,1,"cerulean",2000,"#98B2D1","15-4020","StatusCode Weekly","http://statuscode.org/","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."},
+			{1,1,6,12,2,2,"fuchsia rose",2001,"#C74375","17-2031","StatusCode Weekly","http://statuscode.org/","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."},
+			{2,1,6,12,2,3,"true red",2002,"#BF1932","19-1664","StatusCode Weekly","http://statuscode.org/","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."},
+			{3,1,6,12,2,4,"aqua sky",2003,"#7BC4C4","14-4811","StatusCode Weekly","http://statuscode.org/","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."},
+			{4,1,6,12,2,5,"tigerlily",2004,"#E2583E","17-1456","StatusCode Weekly","http://statuscode.org/","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."},
+			{5,1,6,12,2,6,"blue turquoise",2005,"#53B0AE","15-5217","StatusCode Weekly","http://statuscode.org/","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."}
+		};
+	}
+	
 	
 	@DataProvider(name = "inValidIds")
 	public Object[] getinValidIds() {
@@ -62,89 +115,4 @@ public class ResourceTests {
 	}
 	
 	
-	@Test
-	private void test_list_resource_return_HTTP_200() 
-	{
-		
-		System.out.println("test_list_resource_return_HTTP_200() api 4a - LIST <RESOURCE> ");
-		ListResources lrRes = given().log().all().spec(req)
-		.when().get("/api/unknown/1")
-		.then().log().all().assertThat().spec(res200)
-		.extract().as(ListResources.class);
-		
-	
-		//int expectedId = lrRes.getData().get(1).getId();
-		System.out.println(lrRes);		
-		//Assert.assertEquals(expectedId, 1);
-		//Assert.assertEquals(actualName, "cerulean");
-		////Assert.assertEquals(actualYear, "2000");
-		//Assert.assertEquals(actualColor, "#98B2D1");
-		//Assert.assertEquals(actualPantone, "15-4020");
-		
-	
-	
-		//System.out.println(lrRes.getData().get(validId).getId());
-		// q1. when it is string how to extract data and Assert data
-		// q2. when it is json how to extract data and Assert data
-		// q3. if it is class how to extract data and Assert data
-		//String lrStringRes =  lrRes.asString();
-		//JsonPath lrJs = Utils.rawToJson(lrStringRes);
-		
-		//System.out.println(lrRes.getData().get(7).getId());
-		
-		/*ResourceData rd = new ResourceData();
-		System.out.println(rd.getId());
-		
-		
-		for (int i = 0; i <= lrRes.getTotal(); i++) {
-			int actualPage = (lrRes.getPage());
-			System.out.println("i is " + i);
-			System.out.println("Acutal page is " + actualPage);
-
-			//Assert.assertEquals(actualPage, i);
-
-			//System.out.println("id is " + lrRes.getData().get(i).getId());
-		}
-		
-	}
-	
-	@Test
-	private void test_get_resourceList_returns_resourceList_with_HTTP_200() 
-	{
-		String[] expectedResourceNames = {"cerulean","fuchsia rose","true red","aqua sky","tigerlily","blue turquoise"};
-		
-		// List Resource getCall 4
-		System.out.println("test_get_resourceList_returns_resourceList_with_HTTP_200() api 4b - LIST <RESOURCE> ");
-		ListResources lr = given().spec(req)
-				.when()
-				.get("/api/unknown")
-				.then().assertThat().statusCode(200)
-				.extract().response().as(ListResources.class);
-				
-				int lengthExpectedList = expectedResourceNames.length;
-				List<files.ResourceData> ResourceData = lr.getData();
-				//System.out.println(ResourceData);
-				for (int i =0; i< lengthExpectedList; i++) 
-				{
-					String resourceName = expectedResourceNames[i];
-					lr.getData().get(i).getName();
-					if (lr.getData().get(i).getName().equalsIgnoreCase(resourceName))
-					{
-						System.out.println("Name >  "+ResourceData.get(i).getName());
-						System.out.println("Year >  "+ResourceData.get(i).getYear());
-						System.out.println("Color>  "+ResourceData.get(i).getColor());
-						System.out.println("Pantone_value > "+ResourceData.get(i).getPantone_value());
-					}
-					for (int j= 0; j< lengthExpectedList; j++) 
-					{
-						if (ResourceData.get(j).getName().equalsIgnoreCase(resourceName))
-						{
-							System.out.println(ResourceData.get(j).getName());
-						}
-					}
-				
-				}
-				
-	}
-	*/
 }
