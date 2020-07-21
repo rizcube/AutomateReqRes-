@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-19T08:10:43Z" name="Default suite" finished-at="2020-07-19T08:10:48Z" duration-ms="4350">
+  <suite started-at="2020-07-20T21:06:41Z" name="Default suite" finished-at="2020-07-20T21:06:48Z" duration-ms="7622">
     <groups>
     </groups>
-    <test started-at="2020-07-19T08:10:43Z" name="Default test" finished-at="2020-07-19T08:10:48Z" duration-ms="4350">
+    <test started-at="2020-07-20T21:06:41Z" name="Default test" finished-at="2020-07-20T21:06:48Z" duration-ms="7622">
       <class name="files.UserTests">
-        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:43Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-19T08:10:45Z" duration-ms="1387" status="PASS">
+        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:41Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-20T21:06:43Z" duration-ms="2584" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,7 +28,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFirstNames_UStory2 -->
-        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-19T08:10:45Z" duration-ms="80" status="PASS">
+        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:43Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-20T21:06:43Z" duration-ms="102" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -49,7 +49,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFirstNames_UStory2 -->
-        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-19T08:10:45Z" duration-ms="82" status="PASS">
+        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:43Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-20T21:06:44Z" duration-ms="250" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,7 +70,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFirstNames_UStory2 -->
-        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-19T08:10:45Z" duration-ms="72" status="PASS">
+        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:44Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-20T21:06:44Z" duration-ms="228" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -91,7 +91,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFirstNames_UStory2 -->
-        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-19T08:10:45Z" duration-ms="97" status="PASS">
+        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:44Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-20T21:06:44Z" duration-ms="192" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -112,7 +112,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFirstNames_UStory2 -->
-        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-19T08:10:45Z" duration-ms="80" status="PASS">
+        <test-method signature="testFirstNames_UStory2(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:44Z" name="testFirstNames_UStory2" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-20T21:06:44Z" duration-ms="126" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -133,15 +133,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFirstNames_UStory2 -->
-        <test-method signature="test_create_user_returns_http_201_UStory7()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="test_create_user_returns_http_201_UStory7" finished-at="2020-07-19T08:10:45Z" duration-ms="178" status="PASS">
+        <test-method signature="test_create_user_returns_http_201_UStory7()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:44Z" name="test_create_user_returns_http_201_UStory7" finished-at="2020-07-20T21:06:44Z" duration-ms="351" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_create_user_returns_http_201_UStory7 -->
-        <test-method signature="test_delete_user_returns_http_204_UStory10()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:45Z" name="test_delete_user_returns_http_204_UStory10" finished-at="2020-07-19T08:10:46Z" duration-ms="120" status="PASS">
+        <test-method signature="test_delete_user_returns_http_204_UStory10()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:44Z" name="test_delete_user_returns_http_204_UStory10" finished-at="2020-07-20T21:06:45Z" duration-ms="233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_delete_user_returns_http_204_UStory10 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-19T08:10:46Z" duration-ms="142" status="PASS">
+        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:45Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-20T21:06:45Z" duration-ms="251" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -152,7 +152,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404_UStory3 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-19T08:10:46Z" duration-ms="55" status="PASS">
+        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:45Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-20T21:06:45Z" duration-ms="107" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -163,7 +163,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404_UStory3 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-19T08:10:46Z" duration-ms="73" status="PASS">
+        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:45Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-20T21:06:45Z" duration-ms="153" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -174,7 +174,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404_UStory3 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-19T08:10:46Z" duration-ms="74" status="PASS">
+        <test-method signature="test_get_single_user_by_invalidId_returns_http_404_UStory3(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:45Z" name="test_get_single_user_by_invalidId_returns_http_404_UStory3" data-provider="expectedInValidIds" finished-at="2020-07-20T21:06:45Z" duration-ms="109" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -185,7 +185,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404_UStory3 -->
-        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-19T08:10:46Z" duration-ms="81" status="PASS">
+        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:45Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-20T21:06:46Z" duration-ms="154" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -231,7 +231,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_returns_http_200_UStory1 -->
-        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-19T08:10:46Z" duration-ms="59" status="PASS">
+        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-20T21:06:46Z" duration-ms="135" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -277,7 +277,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_returns_http_200_UStory1 -->
-        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-19T08:10:46Z" duration-ms="60" status="PASS">
+        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-20T21:06:46Z" duration-ms="107" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -323,7 +323,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_returns_http_200_UStory1 -->
-        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-19T08:10:46Z" duration-ms="79" status="PASS">
+        <test-method signature="test_get_single_user_returns_http_200_UStory1(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:46Z" name="test_get_single_user_returns_http_200_UStory1" data-provider="expectedSingleUserdata" finished-at="2020-07-20T21:06:46Z" duration-ms="161" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -369,7 +369,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_single_user_returns_http_200_UStory1 -->
-        <test-method signature="test_login_successful_user_returns_http_200_UStory13(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:46Z" name="test_login_successful_user_returns_http_200_UStory13" data-provider="loginDetails" finished-at="2020-07-19T08:10:47Z" duration-ms="747" status="PASS">
+        <test-method signature="test_login_successful_user_returns_http_200_UStory13(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:46Z" name="test_login_successful_user_returns_http_200_UStory13" data-provider="loginDetails" finished-at="2020-07-20T21:06:47Z" duration-ms="1147" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -385,7 +385,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_login_successful_user_returns_http_200_UStory13 -->
-        <test-method signature="test_login_successful_user_returns_http_200_UStory13(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:47Z" name="test_login_successful_user_returns_http_200_UStory13" data-provider="loginDetails" finished-at="2020-07-19T08:10:47Z" duration-ms="99" status="PASS">
+        <test-method signature="test_login_successful_user_returns_http_200_UStory13(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:47Z" name="test_login_successful_user_returns_http_200_UStory13" data-provider="loginDetails" finished-at="2020-07-20T21:06:47Z" duration-ms="125" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -401,7 +401,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_login_successful_user_returns_http_200_UStory13 -->
-        <test-method signature="test_login_successful_user_returns_http_200_UStory13(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:47Z" name="test_login_successful_user_returns_http_200_UStory13" data-provider="loginDetails" finished-at="2020-07-19T08:10:47Z" duration-ms="86" status="PASS">
+        <test-method signature="test_login_successful_user_returns_http_200_UStory13(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:47Z" name="test_login_successful_user_returns_http_200_UStory13" data-provider="loginDetails" finished-at="2020-07-20T21:06:47Z" duration-ms="106" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -417,7 +417,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_login_successful_user_returns_http_200_UStory13 -->
-        <test-method signature="test_login_unsuccessful_user_returns_http_400_UStory14(java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:47Z" name="test_login_unsuccessful_user_returns_http_400_UStory14" data-provider="loginUnsuccessful" finished-at="2020-07-19T08:10:47Z" duration-ms="113" status="PASS">
+        <test-method signature="test_login_unsuccessful_user_returns_http_400_UStory14(java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:47Z" name="test_login_unsuccessful_user_returns_http_400_UStory14" data-provider="loginUnsuccessful" finished-at="2020-07-20T21:06:47Z" duration-ms="154" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -428,7 +428,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_login_unsuccessful_user_returns_http_400_UStory14 -->
-        <test-method signature="test_login_unsuccessful_user_returns_http_400_UStory14(java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:47Z" name="test_login_unsuccessful_user_returns_http_400_UStory14" data-provider="loginUnsuccessful" finished-at="2020-07-19T08:10:47Z" duration-ms="97" status="PASS">
+        <test-method signature="test_login_unsuccessful_user_returns_http_400_UStory14(java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:47Z" name="test_login_unsuccessful_user_returns_http_400_UStory14" data-provider="loginUnsuccessful" finished-at="2020-07-20T21:06:48Z" duration-ms="90" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -439,19 +439,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_login_unsuccessful_user_returns_http_400_UStory14 -->
-        <test-method signature="test_patch_update_returns_http_200_UStory9()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:47Z" name="test_patch_update_returns_http_200_UStory9" finished-at="2020-07-19T08:10:47Z" duration-ms="119" status="PASS">
+        <test-method signature="test_patch_update_returns_http_200_UStory9()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:48Z" name="test_patch_update_returns_http_200_UStory9" finished-at="2020-07-20T21:06:48Z" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_patch_update_returns_http_200_UStory9 -->
-        <test-method signature="test_put_userDetails_returns_http_200_UStory8()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:47Z" name="test_put_userDetails_returns_http_200_UStory8" finished-at="2020-07-19T08:10:48Z" duration-ms="125" status="PASS">
+        <test-method signature="test_put_userDetails_returns_http_200_UStory8()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:48Z" name="test_put_userDetails_returns_http_200_UStory8" finished-at="2020-07-20T21:06:48Z" duration-ms="161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_put_userDetails_returns_http_200_UStory8 -->
-        <test-method signature="test_register_unsuccessful_user_returns_http_400_UStory12()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:48Z" name="test_register_unsuccessful_user_returns_http_400_UStory12" finished-at="2020-07-19T08:10:48Z" duration-ms="74" status="PASS">
+        <test-method signature="test_register_unsuccessful_user_returns_http_400_UStory12()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:48Z" name="test_register_unsuccessful_user_returns_http_400_UStory12" finished-at="2020-07-20T21:06:48Z" duration-ms="173" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_register_unsuccessful_user_returns_http_400_UStory12 -->
-        <test-method signature="test_register_user_return_http_200_UStory11()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-19T08:10:48Z" name="test_register_user_return_http_200_UStory11" finished-at="2020-07-19T08:10:48Z" duration-ms="101" status="PASS">
+        <test-method signature="test_register_user_return_http_200_UStory11()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-20T21:06:48Z" name="test_register_user_return_http_200_UStory11" finished-at="2020-07-20T21:06:48Z" duration-ms="116" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_register_user_return_http_200_UStory11 -->
