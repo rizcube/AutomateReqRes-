@@ -5,7 +5,7 @@
     <classes>
       <class name="files.DelayedResponseTests">
         <methods>
-          <include name="test_get_delayed_response_returns_HTTP_200_UStory15" invocation-numbers="0"/>
+          <include name="test_Response_Time_returns_HTTP_200_UStory15"/>
         </methods>
       </class> <!-- files.DelayedResponseTests -->
     </classes>

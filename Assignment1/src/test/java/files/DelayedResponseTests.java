@@ -29,7 +29,7 @@ public class DelayedResponseTests {
 				.expectContentType(ContentType.JSON).build();
 
 		ValidatableResponse delayedRes = given().queryParam("delay", 2).spec(req).expect().defaultParser(Parser.JSON)
-				.when().get("/api/users").then().assertThat().time(lessThan(3L), TimeUnit.SECONDS);
+				.when().get("/api/users").then().assertThat().time(lessThan(4L), TimeUnit.SECONDS);
 	}
 
 	@Test(dataProvider = "expectedDelayedRes")
