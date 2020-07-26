@@ -17,3 +17,7 @@ Rest Assured Project for REST API...In this project I have attempted to automate
 2. Run the following command on your command prompt once you are inside the folder created in step 1.
 3. git clone https://github.com/rizcube/Assignment1.git
 
+UserTests
+Inline-style: 
+![alt text]( https://github.com/rizcube/AutomateReqRes-/blob/workbranch1/images_Github/Screenshot%202020-07-26%20at%2009.17.39.png "UserTests")
+
