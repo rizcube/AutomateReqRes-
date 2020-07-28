@@ -19,5 +19,16 @@ Rest Assured Project for REST API...In this project I have attempted to automate
 
 UserTests
 Inline-style: 
-![alt text]( https://github.com/rizcube/AutomateReqRes-/blob/workbranch1/images_Github/Screenshot%202020-07-26%20at%2009.17.39.png "UserTests")
+![alt text]( https://github.com/rizcube/AutomateReqRes-/blob/workbranch1/Assignment1/images_Github/UserTests.png "UserTests")
 
+
+
+ResourceTests
+Inline-style:
+![alt text](
+https://github.com/rizcube/AutomateReqRes-/blob/workbranch1/Assignment1/images_Github/ResourceTests.png "ResourceTest")
+
+
+DelayedResponseTest
+![alt text](
+https://github.com/rizcube/AutomateReqRes-/blob/workbranch1/Assignment1/images_Github/DelayedResponseTests.png "DelayedResponseTest")
