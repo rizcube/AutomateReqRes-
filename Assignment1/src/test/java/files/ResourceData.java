@@ -42,11 +42,11 @@ public class ResourceData {
 		this.color = color;
 	}
 
-	public String getPantone_value() {
+	public String getPantoneValue() {
 		return pantoneValue;
 	}
 
-	public void setPantone_value(String pantone_value) {
+	public void setPantoneValue(String pantone_value) {
 		this.pantoneValue = pantone_value;
 	}
 

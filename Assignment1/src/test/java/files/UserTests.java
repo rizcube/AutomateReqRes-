@@ -31,8 +31,7 @@ public class UserTests extends Data {
 			.build();
 
 	@Test(dataProvider = "expectedInValidIds")
-	private void test_get_single_user_by_invalidId_returns_http_404_UStory3(int invalidId) {
-
+	private void test_get_single_user_by_invalidId_returns_http_404(int invalidId) {
 		Response singleUserNotFoundRes = given().spec(req).when().get("/api/users/" + invalidId + "").then()
 				.spec(res404).extract().response();
 		String singleUserNotFoundStringRes = singleUserNotFoundRes.asString();
@@ -40,10 +39,11 @@ public class UserTests extends Data {
 	}
 
 	@Test(dataProvider = "expectedSingleUserdata")
-	private void test_get_single_user_returns_http_200_UStory1(int id, String email, String first_name,
+	private void test_get_single_user_returns_http_200(int id, String email, String first_name,
 			String last_name, String avatar, String company, String url, String text) {
+		// UStory1
+		
 		RestAssured.baseURI = "https://reqres.in/";
-
 		GetSingleUser gsUser = given().queryParam("page", id).expect().defaultParser(Parser.JSON).when()
 				.get("/api/users/" + id).then().spec(res200).extract().response().as(GetSingleUser.class);
 
@@ -58,8 +58,7 @@ public class UserTests extends Data {
 	}
 
 	@Test(dataProvider = "expectedUserName&IdPg2")
-	private void testFirstNames_UStory2(int index, int id, String first_name) {
-
+	private void testFirstNames(int index, int id, String first_name) {
 		ListUsers lu = given().queryParam("page", 2).expect().defaultParser(Parser.JSON).when().get("/api/users?page=2")
 				.then().assertThat().statusCode(200).extract().response().as(ListUsers.class);
 		lu.getData().get(index).getFirstName();
@@ -70,7 +69,7 @@ public class UserTests extends Data {
 	}
 
 	@Test
-	public void test_create_user_returns_http_201_UStory7() {
+	public void test_create_user_returns_http_201() {
 		AddUser au = new AddUser();
 		au.setName("morpheus");
 		au.setJob("leader");
@@ -83,7 +82,7 @@ public class UserTests extends Data {
 	}
 
 	@Test
-	public void test_put_userDetails_returns_http_200_UStory8() {
+	public void test_put_userDetails_returns_http_200() {
 		AddUser pu = new AddUser();
 		pu.setName("morpheus");
 		pu.setJob("zion resident");
@@ -104,8 +103,8 @@ public class UserTests extends Data {
 	}
 
 	@Test
-	public void test_patch_update_returns_http_200_UStory9() {
-		// Patch update Making partial changes to an existing resource / Request 9
+	public void test_patch_update_returns_http_200() {
+		// Patch update Making partial changes to an existing resource
 		// (update request)
 
 		AddUser pu = new AddUser();
@@ -127,9 +126,8 @@ public class UserTests extends Data {
 	}
 
 	@Test
-	public void test_delete_user_returns_http_204_UStory10() {
-		// Delete user request number 10
-		//System.out.println("test_patch_update_returns_http_204() User Story 10 PATCH UPDATE REQUEST");
+	public void test_delete_user_returns_http_204() {
+		// Delete user PATCH UPDATE REQUEST
 
 		Data ud = new Data();
 		ud.setEmail("eve.holt@reqres.in");
@@ -144,7 +142,7 @@ public class UserTests extends Data {
 	}
 
 	@Test
-	public void test_register_user_return_http_200_UStory11() {
+	public void test_register_user_return_http_200() {
 		Data ru = new Data();
 		ru.setEmail("eve.holt@reqres.in");
 		ru.setPassword("pistol");
@@ -165,7 +163,7 @@ public class UserTests extends Data {
 	}
 
 	@Test
-	public void test_register_unsuccessful_user_returns_http_400_UStory12() {
+	public void test_register_unsuccessful_user_returns_http_400() {
 
 		Data ru = new Data();
 		ru.setEmail("sydneey@fife");
@@ -174,8 +172,6 @@ public class UserTests extends Data {
 				.then().assertThat().statusCode(400).extract().response().body();
 
 		String registerUnsuccessStringRes = registerUnsuccessRes.asString();
-		// System.out.println(registerUnsuccessStringRes);
-
 		JsonPath regUserJson = Utils.rawToJson(registerUnsuccessStringRes);
 		String actualError = (regUserJson.getString("error"));
 		String expectedError = "Missing password";
@@ -184,7 +180,7 @@ public class UserTests extends Data {
 	}
 
 	@Test(dataProvider = "loginDetails")
-	public void test_login_successful_user_returns_http_200_UStory13(String email, String password) {
+	public void test_login_successful_user_returns_http_200(String email, String password) {
 		Data ls = new Data();
 		ls.setEmail(email);
 		ls.setPassword(password);
@@ -200,7 +196,7 @@ public class UserTests extends Data {
 	}
 
 	@Test(dataProvider = "loginUnsuccessful")
-	public void test_login_unsuccessful_user_returns_http_400_UStory14(String email) {
+	public void test_login_unsuccessful_user_returns_http_400(String email) {
 
 		Data ls = new Data();
 		ls.setEmail(email);

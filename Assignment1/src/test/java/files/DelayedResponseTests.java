@@ -19,9 +19,7 @@ import io.restassured.specification.ResponseSpecification;
 
 public class DelayedResponseTests {
 	@Test
-	private void test_Response_Time_returns_HTTP_200_UStory15() {
-
-		System.out.println("test_get_delayed_response_returns_HTTP_200() User Story 15 Delayed Response ");
+	private void test_Response_Time_returns_HTTP_200() {
 
 		RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://reqres.in/")
 				.setContentType(ContentType.JSON).build();
@@ -33,7 +31,7 @@ public class DelayedResponseTests {
 	}
 
 	@Test(dataProvider = "expectedDelayedRes")
-	private void test_get_delayed_response_returns_HTTP_200_UStory15(int index, int page, int per_page, int total,
+	private void test_get_delayed_response_returns_HTTP_200(int index, int page, int per_page, int total,
 			int total_pages, int id, String email, String first_name, String last_name, String avatar, String company,
 			String url, String text) {
 
@@ -44,13 +42,13 @@ public class DelayedResponseTests {
 				.when().get("/api/users?delay=3").then().extract().response().as(DelayedResponse.class);
 
 		int actualPage = delayedClassRes.getPage();
-		int actualPer_page = delayedClassRes.getPer_page();
+		int actualPer_page = delayedClassRes.getPerPage();
 		int actualTotal = delayedClassRes.getTotal();
-		int actualTotal_pages = delayedClassRes.getTotal_pages();
+		int actualTotal_pages = delayedClassRes.getTotalPages();
 		int actualId = delayedClassRes.getData().get(0).getId();
 		String actualEmail = delayedClassRes.getData().get(index).getEmail();
-		String actualFirst_name = delayedClassRes.getData().get(index).getFirst_name();
-		String actualLast_name = delayedClassRes.getData().get(index).getLast_name();
+		String actualFirst_name = delayedClassRes.getData().get(index).getFirstName();
+		String actualLast_name = delayedClassRes.getData().get(index).getLastName();
 		String actualAvatar = delayedClassRes.getData().get(index).getAvatar();
 		String actualCompany = delayedClassRes.getAd().getCompany();
 		String actualUrl = delayedClassRes.getAd().getUrl();

@@ -22,25 +22,21 @@ public class ResourceTests {
 			.build();
 
 	@Test(dataProvider = "validIds")
-	private void test_get_singleResource_withValidId_returns_HTTP_200_UStory5(int validId) {
-		// Get request invalid Resource getCall 6
+	private void test_get_singleResource_withValidId_returns_HTTP_200(int validId) {
 		String validResource = given().queryParam("id", validId).spec(req).when().get("/api/unknown/").then()
 				.assertThat().statusCode(200).body("isEmpty()", Matchers.is(false)).extract().response().asString();
 	}
 
 	@Test(dataProvider = "inValidIds")
-	private void test_get_singleResource_with_invalidId_returns_HTTP_404_UStory6(int inValidId) {
+	private void test_get_singleResource_with_invalidId_returns_HTTP_404(int inValidId) {
 
 		int resourceId = 100;
 		String singleResource = given().queryParam("id", resourceId).spec(req).when().get("/api/unknown/").then()
 				.assertThat().statusCode(404).body("isEmpty()", Matchers.is(true)).extract().response().asString();
-		// System.out.println("test_get_singleResource_with_invalidId_returns_HTTP_404()
-		// UserStory 6 - SINGLE <RESOURCE> NOT FOUND ");
-		// System.out.println(singleResource);
 	}
 
 	@Test(dataProvider = "expectedResourceList")
-	private void test_list_resource_return_HTTP_200_UStory4(int index, int page, int per_page, int total,
+	private void test_list_resource_return_HTTP_200(int index, int page, int per_page, int total,
 			int total_pages, int id, String name, int year, String color, String pantone_value, String company,
 			String url, String text) {
 		ListResources lrClassRes = given().spec(req).when().get("/api/unknown").then().assertThat().extract().response()
@@ -55,7 +51,7 @@ public class ResourceTests {
 		String actualName = lrClassRes.getData().get(index).getName();
 		int actualYear = lrClassRes.getData().get(index).getYear();
 		String actualColor = lrClassRes.getData().get(index).getColor();
-		String actualPantoneValue = lrClassRes.getData().get(index).getPantone_value();
+		String actualPantoneValue = lrClassRes.getData().get(index).getPantoneValue();
 		String actualCompany = lrClassRes.getAd().getCompany();
 		String actualUrl = lrClassRes.getAd().getUrl();
 		String actualText = lrClassRes.getAd().getText();
