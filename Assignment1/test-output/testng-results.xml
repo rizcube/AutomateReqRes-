@@ -1,147 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
+<testng-results ignored="0" total="22" passed="22" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-28T13:29:30Z" name="Default suite" finished-at="2020-07-28T13:29:35Z" duration-ms="5077">
+  <suite started-at="2020-07-28T14:39:13Z" name="Default suite" finished-at="2020-07-28T14:39:19Z" duration-ms="5869">
     <groups>
     </groups>
-    <test started-at="2020-07-28T13:29:30Z" name="Default test" finished-at="2020-07-28T13:29:35Z" duration-ms="5077">
-      <class name="files.UserTests">
-        <test-method signature="testFirstNames(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:30Z" name="testFirstNames" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-28T13:29:31Z" duration-ms="1559" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Michael]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFirstNames -->
-        <test-method signature="testFirstNames(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:31Z" name="testFirstNames" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-28T13:29:32Z" duration-ms="82" status="PASS">
+    <test started-at="2020-07-28T14:39:13Z" name="Default test" finished-at="2020-07-28T14:39:19Z" duration-ms="5869">
+      <class name="files.ResourceTests">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:13Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="2123" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Lindsay]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFirstNames -->
-        <test-method signature="testFirstNames(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="testFirstNames" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-28T13:29:32Z" duration-ms="91" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="90" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[2]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Tobias]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFirstNames -->
-        <test-method signature="testFirstNames(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="testFirstNames" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-28T13:29:32Z" duration-ms="132" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="91" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[3]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Byron]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFirstNames -->
-        <test-method signature="testFirstNames(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="testFirstNames" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-28T13:29:32Z" duration-ms="124" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="79" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[4]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[11]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[George]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFirstNames -->
-        <test-method signature="testFirstNames(int, int, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="testFirstNames" data-provider="expectedUserName&amp;IdPg2" finished-at="2020-07-28T13:29:32Z" duration-ms="240" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="75" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[5]]>
               </value>
             </param>
-            <param index="1">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="80" status="PASS">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[12]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Rachel]]>
+                <![CDATA[6]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFirstNames -->
-        <test-method signature="test_create_user_returns_http_201()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="test_create_user_returns_http_201" finished-at="2020-07-28T13:29:32Z" duration-ms="201" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="71" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_create_user_returns_http_201 -->
-        <test-method signature="test_delete_user_returns_http_204()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="test_delete_user_returns_http_204" finished-at="2020-07-28T13:29:32Z" duration-ms="126" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="81" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_delete_user_returns_http_204 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:32Z" name="test_get_single_user_by_invalidId_returns_http_404" data-provider="expectedInValidIds" finished-at="2020-07-28T13:29:33Z" duration-ms="181" status="PASS">
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="66" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="78" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="86" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T14:39:16Z" duration-ms="78" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:16Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T14:39:17Z" duration-ms="121" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -151,8 +149,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_by_invalidId_returns_http_404" data-provider="expectedInValidIds" finished-at="2020-07-28T13:29:33Z" duration-ms="155" status="PASS">
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:17Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T14:39:17Z" duration-ms="75" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -162,8 +160,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_by_invalidId_returns_http_404" data-provider="expectedInValidIds" finished-at="2020-07-28T13:29:33Z" duration-ms="95" status="PASS">
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:17Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T14:39:17Z" duration-ms="74" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -173,8 +171,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404 -->
-        <test-method signature="test_get_single_user_by_invalidId_returns_http_404(int)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_by_invalidId_returns_http_404" data-provider="expectedInValidIds" finished-at="2020-07-28T13:29:33Z" duration-ms="97" status="PASS">
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:17Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T14:39:17Z" duration-ms="100" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -184,8 +182,79 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_by_invalidId_returns_http_404 -->
-        <test-method signature="test_get_single_user_returns_http_200(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_returns_http_200" data-provider="expectedSingleUserdata" finished-at="2020-07-28T13:29:33Z" duration-ms="62" status="PASS">
+        </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:17Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T14:39:17Z" duration-ms="452" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[cerulean]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#98B2D1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[15-4020]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:17Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T14:39:17Z" duration-ms="212" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -194,35 +263,60 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[george.bluth@reqres.in]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[George]]>
+                <![CDATA[6]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Bluth]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[StatusCode Weekly]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[http://statuscode.org/]]>
+                <![CDATA[fuchsia rose]]>
               </value>
             </param>
             <param index="7">
+              <value>
+                <![CDATA[2001]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#C74375]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[17-2031]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
               <value>
                 <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
               </value>
@@ -230,8 +324,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_returns_http_200 -->
-        <test-method signature="test_get_single_user_returns_http_200(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_returns_http_200" data-provider="expectedSingleUserdata" finished-at="2020-07-28T13:29:33Z" duration-ms="63" status="PASS">
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:17Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T14:39:18Z" duration-ms="295" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -240,35 +334,60 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[janet.weaver@reqres.in]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Janet]]>
+                <![CDATA[6]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Weaver]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[StatusCode Weekly]]>
+                <![CDATA[3]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[http://statuscode.org/]]>
+                <![CDATA[true red]]>
               </value>
             </param>
             <param index="7">
+              <value>
+                <![CDATA[2002]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#BF1932]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[19-1664]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
               <value>
                 <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
               </value>
@@ -276,8 +395,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_returns_http_200 -->
-        <test-method signature="test_get_single_user_returns_http_200(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_returns_http_200" data-provider="expectedSingleUserdata" finished-at="2020-07-28T13:29:33Z" duration-ms="78" status="PASS">
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:18Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T14:39:19Z" duration-ms="1146" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -286,81 +405,60 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[emma.wong@reqres.in]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Emma]]>
+                <![CDATA[6]]>
               </value>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[Wong]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[StatusCode Weekly]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[http://statuscode.org/]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_get_single_user_returns_http_200 -->
-        <test-method signature="test_get_single_user_returns_http_200(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_get_single_user_returns_http_200" data-provider="expectedSingleUserdata" finished-at="2020-07-28T13:29:33Z" duration-ms="72" status="PASS">
-          <params>
-            <param index="0">
               <value>
                 <![CDATA[12]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[rachel.howell@reqres.in]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Rachel]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Howell]]>
-              </value>
-            </param>
             <param index="4">
               <value>
-                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[StatusCode Weekly]]>
+                <![CDATA[4]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[http://statuscode.org/]]>
+                <![CDATA[aqua sky]]>
               </value>
             </param>
             <param index="7">
+              <value>
+                <![CDATA[2003]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#7BC4C4]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[14-4811]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
               <value>
                 <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
               </value>
@@ -368,94 +466,150 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_get_single_user_returns_http_200 -->
-        <test-method signature="test_login_successful_user_returns_http_200(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:33Z" name="test_login_successful_user_returns_http_200" data-provider="loginDetails" finished-at="2020-07-28T13:29:34Z" duration-ms="736" status="PASS">
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:19Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T14:39:19Z" duration-ms="169" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[eve.holt@reqres.in]]>
+                <![CDATA[4]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[cityslicka]]>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[tigerlily]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2004]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#E2583E]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[17-1456]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_login_successful_user_returns_http_200 -->
-        <test-method signature="test_login_successful_user_returns_http_200(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:34Z" name="test_login_successful_user_returns_http_200" data-provider="loginDetails" finished-at="2020-07-28T13:29:34Z" duration-ms="104" status="PASS">
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T14:39:19Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T14:39:19Z" duration-ms="167" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[eve.holt@reqres.in]]>
+                <![CDATA[5]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[licka]]>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[blue turquoise]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2005]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#53B0AE]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[15-5217]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[StatusCode Weekly]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[http://statuscode.org/]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_login_successful_user_returns_http_200 -->
-        <test-method signature="test_login_successful_user_returns_http_200(java.lang.String, java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:34Z" name="test_login_successful_user_returns_http_200" data-provider="loginDetails" finished-at="2020-07-28T13:29:34Z" duration-ms="107" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[eve.holt@reqres.in]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[city]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_login_successful_user_returns_http_200 -->
-        <test-method signature="test_login_unsuccessful_user_returns_http_400(java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:34Z" name="test_login_unsuccessful_user_returns_http_400" data-provider="loginUnsuccessful" finished-at="2020-07-28T13:29:34Z" duration-ms="127" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[peter@klaven]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_login_unsuccessful_user_returns_http_400 -->
-        <test-method signature="test_login_unsuccessful_user_returns_http_400(java.lang.String)[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:34Z" name="test_login_unsuccessful_user_returns_http_400" data-provider="loginUnsuccessful" finished-at="2020-07-28T13:29:34Z" duration-ms="93" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[rizcube@gmail.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_login_unsuccessful_user_returns_http_400 -->
-        <test-method signature="test_patch_update_returns_http_200()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:34Z" name="test_patch_update_returns_http_200" finished-at="2020-07-28T13:29:35Z" duration-ms="124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_patch_update_returns_http_200 -->
-        <test-method signature="test_put_userDetails_returns_http_200()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:35Z" name="test_put_userDetails_returns_http_200" finished-at="2020-07-28T13:29:35Z" duration-ms="121" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_put_userDetails_returns_http_200 -->
-        <test-method signature="test_register_unsuccessful_user_returns_http_400()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:35Z" name="test_register_unsuccessful_user_returns_http_400" finished-at="2020-07-28T13:29:35Z" duration-ms="101" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_register_unsuccessful_user_returns_http_400 -->
-        <test-method signature="test_register_user_return_http_200()[pri:0, instance:files.UserTests@33a2499c]" started-at="2020-07-28T13:29:35Z" name="test_register_user_return_http_200" finished-at="2020-07-28T13:29:35Z" duration-ms="117" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_register_user_return_http_200 -->
-      </class> <!-- files.UserTests -->
+        </test-method> <!-- test_list_resource_return_HTTP_200 -->
+      </class> <!-- files.ResourceTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

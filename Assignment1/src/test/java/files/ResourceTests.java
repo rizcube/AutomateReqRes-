@@ -32,7 +32,7 @@ public class ResourceTests {
 
 		int resourceId = 100;
 		given().queryParam("id", resourceId).spec(req).when().get("/api/unknown/").then()
-				.assertThat().statusCode(404).body("isEmpty()", Matchers.is(true)).extract().response().asString();
+				.assertThat().statusCode(404).body("isEmpty()", Matchers.is(true));
 	}
 
 	@Test(dataProvider = "expectedResourceList")
