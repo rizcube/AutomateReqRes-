@@ -32,9 +32,9 @@ public class UserTests extends Data {
 
 	@Test(dataProvider = "expectedInValidIds")
 	private void test_get_single_user_by_invalidId_returns_http_404(int invalidId) {
-		Response singleUserNotFoundRes = given().spec(req).when().get("/api/users/" + invalidId + "").then()
+		given().spec(req).when().get("/api/users/" + invalidId + "").then()
 				.spec(res404).extract().response();
-		String singleUserNotFoundStringRes = singleUserNotFoundRes.asString();
+		
 		Assert.assertEquals("{[]}", "{[]}");
 	}
 
@@ -96,7 +96,7 @@ public class UserTests extends Data {
 
 		String actualName = puJson.getString("name");
 		String actualJob = puJson.getString("job");
-		String updatedAt = puJson.getString("updatedAt");
+		
 
 		Assert.assertEquals(actualName, "morpheus");
 		Assert.assertEquals(actualJob, "zion resident");
