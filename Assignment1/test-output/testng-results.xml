@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="22" passed="22" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-28T08:44:45Z" name="Default suite" finished-at="2020-07-28T08:44:49Z" duration-ms="3659">
+  <suite started-at="2020-07-28T13:15:31Z" name="Default suite" finished-at="2020-07-28T13:15:35Z" duration-ms="4192">
     <groups>
     </groups>
-    <test started-at="2020-07-28T08:44:45Z" name="Default test" finished-at="2020-07-28T08:44:49Z" duration-ms="3659">
+    <test started-at="2020-07-28T13:15:31Z" name="Default test" finished-at="2020-07-28T13:15:35Z" duration-ms="4192">
       <class name="files.ResourceTests">
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:45Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:47Z" duration-ms="1560" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:31Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:33Z" duration-ms="1629" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:47Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:47Z" duration-ms="85" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:33Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:33Z" duration-ms="135" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:47Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:47Z" duration-ms="84" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:33Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:33Z" duration-ms="148" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:47Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:47Z" duration-ms="72" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:33Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:33Z" duration-ms="122" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,7 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:47Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:47Z" duration-ms="82" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:33Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:33Z" duration-ms="113" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,7 +62,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:47Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:47Z" duration-ms="84" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:33Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:33Z" duration-ms="125" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -73,7 +73,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:47Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:48Z" duration-ms="73" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:33Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:34Z" duration-ms="119" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -84,7 +84,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:48Z" duration-ms="75" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:34Z" duration-ms="107" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -95,7 +95,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:48Z" duration-ms="86" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:34Z" duration-ms="103" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -106,7 +106,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:48Z" duration-ms="83" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:34Z" duration-ms="99" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -117,7 +117,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:48Z" duration-ms="73" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:34Z" duration-ms="100" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -128,7 +128,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T08:44:48Z" duration-ms="63" status="PASS">
+        <test-method signature="test_get_singleResource_withValidId_returns_HTTP_200(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_withValidId_returns_HTTP_200" data-provider="validIds" finished-at="2020-07-28T13:15:34Z" duration-ms="107" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -139,7 +139,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_withValidId_returns_HTTP_200 -->
-        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T08:44:48Z" duration-ms="93" status="PASS">
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T13:15:34Z" duration-ms="109" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -150,7 +150,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
-        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T08:44:48Z" duration-ms="65" status="PASS">
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T13:15:34Z" duration-ms="74" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -161,7 +161,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
-        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T08:44:48Z" duration-ms="67" status="PASS">
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T13:15:34Z" duration-ms="60" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -172,7 +172,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
-        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T08:44:48Z" duration-ms="90" status="PASS">
+        <test-method signature="test_get_singleResource_with_invalidId_returns_HTTP_404(int)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_get_singleResource_with_invalidId_returns_HTTP_404" data-provider="inValidIds" finished-at="2020-07-28T13:15:34Z" duration-ms="86" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -183,7 +183,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_get_singleResource_with_invalidId_returns_HTTP_404 -->
-        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:48Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T08:44:49Z" duration-ms="473" status="PASS">
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:34Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T13:15:35Z" duration-ms="535" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -254,7 +254,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_list_resource_return_HTTP_200 -->
-        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:49Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T08:44:49Z" duration-ms="67" status="PASS">
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:35Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T13:15:35Z" duration-ms="79" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -325,7 +325,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_list_resource_return_HTTP_200 -->
-        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:49Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T08:44:49Z" duration-ms="139" status="PASS">
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:35Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T13:15:35Z" duration-ms="70" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -396,7 +396,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_list_resource_return_HTTP_200 -->
-        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:49Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T08:44:49Z" duration-ms="63" status="PASS">
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:35Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T13:15:35Z" duration-ms="81" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -467,7 +467,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_list_resource_return_HTTP_200 -->
-        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:49Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T08:44:49Z" duration-ms="66" status="PASS">
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:35Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T13:15:35Z" duration-ms="62" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -538,7 +538,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_list_resource_return_HTTP_200 -->
-        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T08:44:49Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T08:44:49Z" duration-ms="55" status="PASS">
+        <test-method signature="test_list_resource_return_HTTP_200(int, int, int, int, int, int, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:files.ResourceTests@51c929ae]" started-at="2020-07-28T13:15:35Z" name="test_list_resource_return_HTTP_200" data-provider="expectedResourceList" finished-at="2020-07-28T13:15:35Z" duration-ms="63" status="PASS">
           <params>
             <param index="0">
               <value>

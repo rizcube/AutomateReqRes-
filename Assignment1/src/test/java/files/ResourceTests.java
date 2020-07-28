@@ -23,7 +23,7 @@ public class ResourceTests {
 
 	@Test(dataProvider = "validIds")
 	private void test_get_singleResource_withValidId_returns_HTTP_200(int validId) {
-		String validResource = given().queryParam("id", validId).spec(req).when().get("/api/unknown/").then()
+	given().queryParam("id", validId).spec(req).when().get("/api/unknown/").then()
 				.assertThat().statusCode(200).body("isEmpty()", Matchers.is(false)).extract().response().asString();
 	}
 
@@ -31,7 +31,7 @@ public class ResourceTests {
 	private void test_get_singleResource_with_invalidId_returns_HTTP_404(int inValidId) {
 
 		int resourceId = 100;
-		String singleResource = given().queryParam("id", resourceId).spec(req).when().get("/api/unknown/").then()
+		given().queryParam("id", resourceId).spec(req).when().get("/api/unknown/").then()
 				.assertThat().statusCode(404).body("isEmpty()", Matchers.is(true)).extract().response().asString();
 	}
 
