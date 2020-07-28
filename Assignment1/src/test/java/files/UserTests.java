@@ -18,7 +18,6 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-// test_get_single_user_returns_http_200 need to add a method
 public class UserTests extends Data {
 
 	String baseURI = RestAssured.baseURI = "https://reqres.in/";
@@ -50,8 +49,8 @@ public class UserTests extends Data {
 
 		Assert.assertEquals(gsUser.getData().getId(), id);
 		Assert.assertEquals(gsUser.getData().getEmail(), email);
-		Assert.assertEquals(gsUser.getData().getFirst_name(), first_name);
-		Assert.assertEquals(gsUser.getData().getLast_name(), last_name);
+		Assert.assertEquals(gsUser.getData().getFirstName(), first_name);
+		Assert.assertEquals(gsUser.getData().getLastName(), last_name);
 		Assert.assertEquals(gsUser.getData().getAvatar(), avatar);
 		Assert.assertEquals(gsUser.getAd().getCompany(), company);
 		Assert.assertEquals(gsUser.getAd().getUrl(), url);
@@ -63,9 +62,9 @@ public class UserTests extends Data {
 
 		ListUsers lu = given().queryParam("page", 2).expect().defaultParser(Parser.JSON).when().get("/api/users?page=2")
 				.then().assertThat().statusCode(200).extract().response().as(ListUsers.class);
-		lu.getData().get(index).getFirst_name();
+		lu.getData().get(index).getFirstName();
 
-		Assert.assertEquals(lu.getData().get(index).getFirst_name(), first_name);
+		Assert.assertEquals(lu.getData().get(index).getFirstName(), first_name);
 		Assert.assertEquals(lu.getData().get(index).getId(), id);
 
 	}
@@ -108,7 +107,6 @@ public class UserTests extends Data {
 	public void test_patch_update_returns_http_200_UStory9() {
 		// Patch update Making partial changes to an existing resource / Request 9
 		// (update request)
-		System.out.println("test_patch_update_returns_http_200() User Story 9 PATCH UPDATE REQUEST");
 
 		AddUser pu = new AddUser();
 		pu.setName("morpheus");
@@ -131,7 +129,7 @@ public class UserTests extends Data {
 	@Test
 	public void test_delete_user_returns_http_204_UStory10() {
 		// Delete user request number 10
-		System.out.println("test_patch_update_returns_http_204() User Story 10 PATCH UPDATE REQUEST");
+		//System.out.println("test_patch_update_returns_http_204() User Story 10 PATCH UPDATE REQUEST");
 
 		Data ud = new Data();
 		ud.setEmail("eve.holt@reqres.in");

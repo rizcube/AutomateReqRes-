@@ -1,11 +1,17 @@
 package files;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+
+
 public class Data {
 
 	private int id;
 	private String email;
-	private String first_name;
-	private String last_name;
+	@JsonProperty("first_name") private String firstName;
+	@JsonProperty("last_name") private String lastName;
 	private String avatar;
 	private String password;
 
@@ -25,20 +31,20 @@ public class Data {
 		this.email = email;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String first_name) {
+		this.firstName = first_name;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String last_name) {
+		this.lastName = last_name;
 	}
 
 	public String getAvatar() {

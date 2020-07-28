@@ -1,12 +1,14 @@
 package files;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ResourceData {
 
 	private int id;
 	private String name;
 	private int year;
 	private String color;
-	private String pantone_value;
+	@JsonProperty("pantone_value")private String pantoneValue;
 
 	public int getId() {
 		return id;
@@ -41,11 +43,11 @@ public class ResourceData {
 	}
 
 	public String getPantone_value() {
-		return pantone_value;
+		return pantoneValue;
 	}
 
 	public void setPantone_value(String pantone_value) {
-		this.pantone_value = pantone_value;
+		this.pantoneValue = pantone_value;
 	}
 
 }
